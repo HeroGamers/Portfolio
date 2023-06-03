@@ -104,3 +104,10 @@ h5 {
 h6 {
   font-size: 1rem;
 }
+
+.card {
+  width: 30rem;
+  border-width: 2px;
+  border-color: $color-bg-top;
+  border-radius: 0.375rem;
+}

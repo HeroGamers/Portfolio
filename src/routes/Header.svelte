@@ -34,6 +34,10 @@
 				<li aria-current={$page.url.searchParams.get('page') === 'portfolio' ? 'page' : undefined}>
 					<a class="flex items-center" href="?page=portfolio">Portfolio</a>
 				</li>
+
+				<li aria-current={$page.url.searchParams.get('page') === 'contact' ? 'page' : undefined}>
+					<a class="flex items-center" href="?page=contact">Contact</a>
+				</li>
 			</ul>
 		</nav>
 

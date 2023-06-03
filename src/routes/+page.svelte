@@ -5,6 +5,7 @@
 	import Experience from "./Experience.svelte";
 	import Education from "./Education.svelte";
 	import Portfolio from "./Portfolio.svelte";
+	import Contact from "./Contact.svelte";
 
 	/** @type String */
 	const description = "A student, aspiring to become a full-time developer.";
@@ -56,11 +57,11 @@
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<div class="flex flex-col justify-top items-center flex-1 md:mt-8">
+<div class="flex flex-col justify-top items-start flex-1 md:mt-8">
 	<Title />
 	<About />
 	<Experience />
 	<Education />
 	<Portfolio />
+	<Contact />
 </div>
-

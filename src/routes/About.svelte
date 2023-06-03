@@ -1,8 +1,15 @@
-<section id="about" class="flex flex-col pt-10 items-start w-full">
+<script>
+  const birthdate = new Date("2002-03-26");
+  // kudos to https://stackoverflow.com/a/24181701/12418245
+  const ageDate = new Date(Date.now() - birthdate);
+  const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+</script>
+
+<section id="about" class="flex flex-col pt-10 items-start w-full max-w-5xl">
   <h5 class="font-medium">About me</h5>
   <p>
-    Hi there, my name is Marcus, and I'm a software engineering student at the Technical University of Denmark with
-    a love for everything tech.
+    Hi there, my name is Marcus, and I'm a {age} year old Software Engineering student at the Technical University of Denmark with
+    a love for all things tech.
   </p>
   <p class="pt-2">
     I have always been fascinated by computers, and especially video games.
