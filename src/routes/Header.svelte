@@ -115,7 +115,7 @@
 		<nav class="flex items-center justify-end md:justify-center w-full">
 			<ul class="flex flex-row md:flex-col md:space-y-6 items-center md:items-start list-none">
 				{#each sections as section}
-					<li aria-current={section.current} class="{section.id}-navbar">
+					<li aria-current={section.current} class="{section.id}-navbar" data-testid="{section.id}-navbar">
 						<a class="flex items-center" href={section.href}>{section.text}</a>
 					</li>
 				{/each}

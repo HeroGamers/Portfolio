@@ -6,11 +6,11 @@
   <div class="flex flex-col flex-1 w-full max-w-sm">
     <div class="flex flex-row w-full">
       <p class="w-full">Email:</p>
-      <a class="w-full" href="mailto:hero@herogamers.dev">hero@herogamers.dev</a>
+      <a class="w-full" href="mailto:hero@herogamers.dev" target="_blank">hero@herogamers.dev</a>
     </div>
     <div class="flex flex-row w-full">
       <p class="w-full">Keybase (encrypted):</p>
-      <a class="w-full" href="https://keybase.io/herogamers">keybase.io/herogamers</a>
+      <a class="w-full" href="https://keybase.io/herogamers" target="_blank">keybase.io/herogamers</a>
     </div>
   </div>
 </section>

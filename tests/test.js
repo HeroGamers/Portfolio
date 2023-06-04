@@ -1,6 +1,31 @@
 import { expect, test } from '@playwright/test';
 
-test('about page has expected h1', async ({ page }) => {
-	await page.goto('/about');
-	await expect(page.getByRole('heading', { name: 'About this app' })).toBeVisible();
+test('Home section exists', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('heading', { name: 'An Aspiring Developer' })).toBeVisible();
+});
+test('About section exists', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('heading', { name: 'About me' })).toBeVisible();
+});
+test('Experience section exists', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('heading', { name: 'Experience' })).toBeVisible();
+});
+test('Education section exists', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('heading', { name: 'Education' })).toBeVisible();
+});
+test('Portfolio section exists', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('heading', { name: 'Portfolio' })).toBeVisible();
+});
+test('Contact section exists', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.getByRole('heading', { name: 'Contact' })).toBeVisible();
+});
+
+test('Navbar Scroll Indicator', async ({ page }) => {
+	await page.goto('#portfolio');
+	await expect(page.getByTestId("portfolio-navbar")).toHaveAttribute("aria-current", "page");
 });
