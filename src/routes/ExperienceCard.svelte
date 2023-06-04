@@ -11,24 +11,48 @@
     employment_type: "Full-time"
   }];
 
-  let oldest_start_date;
-  let newest_end_date = new Date();
+  // Get the "newest" end date and the oldest start date for the entire company,
+  // and check if employment types are equal
+  /** @type Date */
+  let oldest_start_date = undefined;
+  /** @type Date */
+  let newest_end_date = undefined;
+  /** @type String */
+  let employmentType = undefined;
 
   functions.forEach((func_at_company) => {
-    if (oldest_start_date == null && func_at_company.start_date != null) {
+    if (employmentType === undefined) {
+      employmentType = func_at_company.employment_type;
+    }
+    else if (employmentType !== func_at_company.employment_type) {
+      employmentType = null;
+    }
+
+    if (oldest_start_date === undefined) {
       oldest_start_date = func_at_company.start_date;
     }
+    else if (func_at_company.start_date === null && oldest_start_date !== null) {
+      oldest_start_date = null;
+    }
     else {
-      if (func_at_company.start_date - oldest_start_date < 0) {
+      if (func_at_company.start_date !== null && oldest_start_date !== null && (func_at_company.start_date.getTime() - oldest_start_date.getTime() < 0)) {
         oldest_start_date = func_at_company.start_date;
       }
     }
 
-    if (newest_end_date != null) {
-      if (func_at_company.end_date == null) {
+    if (newest_end_date === undefined) {
+      if (func_at_company.end_date === undefined) {
         newest_end_date = null;
       }
-      else if (func_at_company.end_date - newest_end_date < 0) {
+      else {
+        newest_end_date = func_at_company.end_date;
+      }
+    }
+    else if (newest_end_date !== null) {
+      if (func_at_company.end_date === null) {
+        newest_end_date = null;
+      }
+      else if (newest_end_date.getTime() - func_at_company.end_date.getTime() < 0) {
         newest_end_date = func_at_company.end_date;
       }
     }
@@ -40,13 +64,20 @@
 <div class="flex flex-col">
   <p class="pb-2">{getMonthString(oldest_start_date)} {oldest_start_date.getFullYear()} to {newest_end_date != null ? (getMonthString(newest_end_date) + " " + newest_end_date.getFullYear()) : "Present"}</p>
   <div class="flex flex-col ml-4 p-2 card">
-    <p class="font-bold">{company}</p>
+    <p class="font-bold">
+      {company}
+      {#if employmentType !== null}
+        &bull; {employmentType}
+      {/if}
+    </p>
     {#each functions as func_at_company}
-      <p class="font-medium">- {func_at_company.title}</p>
-      <p class="font-light pl-2">- {func_at_company.employment_type}</p>
+      <p class="font-medium">- {func_at_company.title} ({getMonthString(func_at_company.start_date)} {func_at_company.start_date.getFullYear()} to {func_at_company.end_date != null ? (getMonthString(func_at_company.end_date) + " " + func_at_company.end_date.getFullYear()) : "Present"})</p>
+      {#if employmentType === null}
+        <p class="font-light pl-2">- {func_at_company.employment_type}</p>
+      {/if}
     {/each}
     {#if description != null}
-      <p class="italic">{description}</p>
+      <p class="pt-2 hyphens-auto">{description}</p>
     {/if}
   </div>
 </div>

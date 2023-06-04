@@ -1,6 +1,7 @@
 <script>
   import EducationCard from "./EducationCard.svelte";
 
+  /** @type Object[] */
   let educations = [
     {
       start_date: new Date("2021-08-01"),

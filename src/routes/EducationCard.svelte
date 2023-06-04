@@ -19,7 +19,7 @@
     <p class="font-bold">{school}</p>
     <p class="font-light">{degree}</p>
     {#if description != null}
-      <p class="italic">{description}</p>
+      <p class="pt-2">{description}</p>
     {/if}
   </div>
 </div>
