@@ -76,23 +76,30 @@
 <div class="flex flex-col">
   <p class="pb-2">{getMonthString(oldest_start_date)} {oldest_start_date.getFullYear()} to {newest_end_date != null ? (getMonthString(newest_end_date) + " " + newest_end_date.getFullYear()) : "Present"}</p>
   <div class="flex flex-col ml-4 p-2 relative card" on:click={toggleExpansion} on:keydown={toggleExpansion} aria-expanded={expanded}>
-    <div class="absolute top-4 right-4 rotate-90 transition-transform h-7 w-7 dropdown">
-      <DropDownIcon />
+    <div class="flex flex-row justify-between">
+      <div class="flex flex-col max-w-[95%]">
+        <p class="font-bold">
+          {company}
+          {#if employmentType !== null}
+            &bull; {employmentType}
+          {/if}
+        </p>
+        {#each functions as func_at_company}
+          <p class="font-medium">- {func_at_company.title} ({getMonthString(func_at_company.start_date)} {func_at_company.start_date.getFullYear()} to {func_at_company.end_date != null ? (getMonthString(func_at_company.end_date) + " " + func_at_company.end_date.getFullYear()) : "Present"})</p>
+          {#if employmentType === null}
+            <p class="font-light pl-2">- {func_at_company.employment_type}</p>
+          {/if}
+        {/each}
+      </div>
+      <!-- absolute top-4 right-4 rotate-90 transition-transform h-7 w-7 dropdown -->
+      <div class="rotate-90 transition-transform h-7 w-7 dropdown ml-3">
+        <DropDownIcon />
+      </div>
     </div>
-    <p class="font-bold">
-      {company}
-      {#if employmentType !== null}
-        &bull; {employmentType}
+    <div>
+      {#if description != null}
+        <p class="pt-2 card-expansion">{description}</p>
       {/if}
-    </p>
-    {#each functions as func_at_company}
-      <p class="font-medium">- {func_at_company.title} ({getMonthString(func_at_company.start_date)} {func_at_company.start_date.getFullYear()} to {func_at_company.end_date != null ? (getMonthString(func_at_company.end_date) + " " + func_at_company.end_date.getFullYear()) : "Present"})</p>
-      {#if employmentType === null}
-        <p class="font-light pl-2">- {func_at_company.employment_type}</p>
-      {/if}
-    {/each}
-    {#if description != null}
-      <p class="pt-2 card-expansion">{description}</p>
-    {/if}
+    </div>
   </div>
 </div>

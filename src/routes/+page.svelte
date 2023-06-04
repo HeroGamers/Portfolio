@@ -57,7 +57,7 @@
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<div class="flex flex-col justify-top items-start flex-1 md:mt-8 md:ml-5 mb-56">
+<div class="flex flex-col justify-top items-start flex-1 md:mt-8 md:ml-5 content-container">
 	<Title />
 	<About />
 	<div class="flex flex-col xl:flex-row xl:justify-evenly xl:w-full xl:space-x-10">
@@ -67,3 +67,12 @@
 	<Portfolio />
 	<Contact />
 </div>
+<div class="flex flex-1 justify-center items-center mb-20 flex-col">
+	<h5>Thanks for visiting!</h5>
+</div>
+
+<style lang="scss">
+	.content-container {
+		margin-bottom: 100vh;
+	}
+</style>
