@@ -57,11 +57,13 @@
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<div class="flex flex-col justify-top items-start flex-1 md:mt-8 mb-20">
+<div class="flex flex-col justify-top items-start flex-1 md:mt-8 md:ml-5 mb-56">
 	<Title />
 	<About />
-	<Experience />
-	<Education />
+	<div class="flex flex-col xl:flex-row xl:justify-evenly xl:w-full xl:space-x-10">
+		<Experience />
+		<Education />
+	</div>
 	<Portfolio />
 	<Contact />
 </div>

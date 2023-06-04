@@ -1,14 +1,17 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/site-icon.svg';
-	import github from '$lib/images/github.svg';
+	import Logo from '$lib/images/SiteIconSVG.svelte';
+	import GitHubLogo from '$lib/images/GitHubSVG.svelte';
+	import LinkedInSVG from "$lib/images/LinkedInSVG.svelte";
+
 </script>
 
 <header class="flex md:min-h-screen md:max-h-screen">
 	<div class="flex justify-between md:flex-col px-2 pt-2 md:py-12 md:min-h-screen md:max-h-screen md:px-0 md:fixed md:m-auto">
-		<div class="flex justify-center md:w-full h-12 flex-col">
+		<div class="flex justify-center md:w-full h-20 flex-col">
 			<a class="flex justify-start md:justify-center h-full w-full" href="https://herogamers.dev">
-				<img src={logo} alt="HeroGamers" />
+				<Logo class="site-logo" />
+<!--				<img src={logo} alt="HeroGamers" />-->
 			</a>
 	<!--		<hr class="border-t-4 border-purple-400 rounded-2xl mt-2 hidden md:flex" />-->
 		</div>
@@ -41,9 +44,12 @@
 			</ul>
 		</nav>
 
-		<div class="justify-center w-full h-12 flex-row hidden md:flex">
-			<a class="flex h-full w-full justify-center" href="https://github.com/HeroGamers">
-				<img class="fill-white" src={github} alt="GitHub" />
+		<div class="justify-center w-full flex-row hidden md:flex space-x-5">
+			<a class="flex justify-center socials h-10 w-10" href="https://github.com/HeroGamers">
+				<GitHubLogo />
+			</a>
+			<a class="flex justify-center socials h-10 w-10" href="https://linkedin.com/in/marcus-sand">
+				<LinkedInSVG />
 			</a>
 		</div>
 	</div>
