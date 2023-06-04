@@ -14,7 +14,7 @@
 </script>
 
 <div class="flex flex-col">
-  <a class="flex flex-col p-2 card m-3" href={link}>
+  <a class="flex flex-col p-2 card m-3" href={link} target="_blank">
     <p class="font-bold">{project_name}</p>
     {#if description != null}
       <p class="pt-2">{description}</p>

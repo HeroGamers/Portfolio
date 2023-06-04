@@ -4,12 +4,18 @@
 	import GitHubLogo from '$lib/images/GitHubSVG.svelte';
 	import LinkedInSVG from "$lib/images/LinkedInSVG.svelte";
 
+	// const isCurrentHeader = (id) => {
+	// 	// https://stackoverflow.com/a/31712309/12418245
+	// 	const currentScroll = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+	// 	const idElem = document.getElementById(id);
+	// 	return idElem.offsetTop < currentScroll;
+	// }
 </script>
 
 <header class="flex md:min-h-screen md:max-h-screen">
 	<div class="flex justify-between md:flex-col px-2 pt-2 md:py-12 md:min-h-screen md:max-h-screen md:px-0 md:fixed md:m-auto">
 		<div class="flex justify-center md:w-full h-20 flex-col">
-			<a class="flex justify-start md:justify-center h-full w-full" href="https://herogamers.dev">
+			<a class="flex justify-start md:justify-center h-full w-full" href="/">
 				<Logo class="site-logo" />
 <!--				<img src={logo} alt="HeroGamers" />-->
 			</a>
@@ -45,10 +51,10 @@
 		</nav>
 
 		<div class="justify-center w-full flex-row hidden md:flex space-x-5">
-			<a class="flex justify-center socials h-10 w-10" href="https://github.com/HeroGamers">
+			<a class="flex justify-center socials h-10 w-10" href="https://github.com/HeroGamers" target="_blank">
 				<GitHubLogo />
 			</a>
-			<a class="flex justify-center socials h-10 w-10" href="https://linkedin.com/in/marcus-sand">
+			<a class="flex justify-center socials h-10 w-10" href="https://linkedin.com/in/marcus-sand" target="_blank">
 				<LinkedInSVG />
 			</a>
 		</div>
@@ -85,7 +91,7 @@
 			transition: color 0.2s linear;
 
 			@media (min-width: 768px) {
-				font-size: 1.5rem;
+				font-size: 1rem;
 			}
 
 			&:hover {
