@@ -57,7 +57,7 @@
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<div class="flex flex-col justify-top items-start flex-1 md:mt-8 md:ml-5 content-container">
+<div class="flex flex-col justify-top items-start md:mt-8 md:ml-5 content-container overflow-x-hidden">
 	<Title />
 	<About />
 	<div class="flex flex-col xl:flex-row xl:justify-evenly xl:w-full xl:space-x-10">

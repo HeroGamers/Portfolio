@@ -135,6 +135,8 @@
 
 <style lang="scss">
 	header {
+		overflow: hidden;
+
 		@media (min-width: 768px) {
 			min-width: 15rem;
 			max-width: 15rem;
