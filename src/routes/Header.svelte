@@ -100,33 +100,42 @@
 	// onDestroy(() => {
 	// 	window.onscroll = () => {}
 	// })
+
+	let burgerMenuExpanded = false;
 </script>
 
 <header class="flex md:min-h-screen md:max-h-screen">
-	<div class="flex justify-between md:flex-col px-2 pt-2 md:py-12 md:min-h-screen md:max-h-screen md:px-0 md:fixed md:m-auto">
-		<div class="flex justify-center md:w-full h-20 flex-col">
-			<a class="flex justify-start md:justify-center h-full w-full" href="/">
+	<div class="flex flex-col sm:flex-row justify-between md:flex-col px-2 py-2 md:py-12 md:min-h-screen md:max-h-screen md:px-0 md:fixed md:m-auto">
+		<div class="flex justify-between sm:w-fit sm:justify-center items-center flex-row md:w-full">
+			<a class="flex justify-start md:justify-center w-12 h-12 md:w-20 md:h-20" href="/" title="Home">
 				<Logo />
 <!--				<img src={logo} alt="HeroGamers" />-->
 			</a>
 	<!--		<hr class="border-t-4 border-purple-400 rounded-2xl mt-2 hidden md:flex" />-->
+
+			<!-- https://stackoverflow.com/a/51813362/12418245 -->
+			<ul class="flex justify-end sm:hidden cursor-pointer list-none hamburger-menu" class:expanded={burgerMenuExpanded} on:click={() => (burgerMenuExpanded = !burgerMenuExpanded)} on:keydown={() => (burgerMenuExpanded = !burgerMenuExpanded)}>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 		</div>
 
-		<nav class="flex items-center justify-end md:justify-center w-full">
-			<ul class="flex flex-row md:flex-col md:space-y-6 items-center md:items-start list-none">
+		<nav class="flex flex-col sm:flex-row items-center justify-end md:justify-center w-full" class:expanded={burgerMenuExpanded}>
+			<ul class="flex flex-col sm:flex-row md:flex-col md:space-y-6 items-center justify-center md:items-start list-none w-full sm:w-fit">
 				{#each sections as section}
-					<li aria-current={section.current} class="{section.id}-navbar" data-testid="{section.id}-navbar">
-						<a class="flex items-center" href={section.href}>{section.text}</a>
+					<li aria-current={section.current} class="{section.id}-navbar w-screen text-center flex justify-center md:justify-start h-full sm:w-full" data-testid="{section.id}-navbar">
+						<a class="flex items-center justify-center w-full text-center sm:justify-start" href={section.href} title={section.text}>{section.text}</a>
 					</li>
 				{/each}
 			</ul>
 		</nav>
 
 		<div class="justify-center w-full flex-row hidden md:flex space-x-5">
-			<a class="flex justify-center socials h-10 w-10" href="https://github.com/HeroGamers" target="_blank">
+			<a class="flex justify-center socials h-10 w-10" href="https://github.com/HeroGamers" target="_blank" title="GitHub">
 				<GitHubLogo />
 			</a>
-			<a class="flex justify-center socials h-10 w-10" href="https://linkedin.com/in/marcus-sand" target="_blank">
+			<a class="flex justify-center socials h-10 w-10" href="https://linkedin.com/in/marcus-sand" target="_blank" title="LinkedIn">
 				<LinkedInSVG />
 			</a>
 		</div>
@@ -135,6 +144,12 @@
 
 <style lang="scss">
 	header {
+		overflow: hidden;
+
+		@media (max-width: 639px) {
+			background-color: $color-bg-1;
+		}
+
 		@media (min-width: 768px) {
 			min-width: 15rem;
 			max-width: 15rem;
@@ -152,6 +167,18 @@
 	}
 
 	nav {
+		@media (max-width: 639px) {
+			display: flex;
+			max-height: 0;
+			transition: max-height 1s ease;
+			overflow: hidden;
+
+			&.expanded {
+				display: flex;
+				max-height: 30vh;
+			}
+		}
+
 		a {
 			height: 100%;
 			padding: 0 0.5rem;
@@ -161,6 +188,11 @@
 			letter-spacing: 0.1em;
 			text-decoration: none;
 			transition: color 0.2s linear;
+
+			@media (max-width: 639px) {
+				padding: 0.5rem 0.5rem;
+				font-size: 0.95rem;
+			}
 
 			@media (min-width: 768px) {
 				font-size: 1rem;
@@ -184,6 +216,14 @@
 				}
 			}
 
+			//@media (max-width: 639px) {
+			//	background-color: $color-bg-1;
+			//
+			//	&:hover {
+			//		background-color: $color-bg-0;
+			//	}
+			//}
+
 			@media (min-width: 768px) {
 				border-left-width: 4px;
 				&[aria-current='page'] {
@@ -200,6 +240,97 @@
 				&:hover {
 					border-left-color: $color-theme-1;
 				}
+			}
+		}
+	}
+
+	// https://stackoverflow.com/a/51813362/12418245
+	.hamburger-menu {
+		cursor: pointer;
+		height: 24px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 30px;
+		position: relative;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: .3s ease-in-out;
+		-moz-transition: .3s ease-in-out;
+		-o-transition: .3s ease-in-out;
+		transition: .3s ease-in-out;
+
+		&.expanded {
+			li {
+				&:nth-child(1) {
+					left: 4px;
+					top: -1px;
+					-webkit-transform: rotate(45deg);
+					-moz-transform: rotate(45deg);
+					-o-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+					width: 0;
+				}
+
+				&:nth-child(3) {
+					left: 4px;
+					top: 20px;
+					-webkit-transform: rotate(-45deg);
+					-moz-transform: rotate(-45deg);
+					-o-transform: rotate(-45deg);
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		li {
+			background-color: $color-text;
+			border-radius: 4px;
+			display: block;
+			height: 4px;
+			left: 0;
+			margin: 0;
+			opacity: 1;
+			padding: 0;
+			position: absolute;
+			width: 100%;
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+			-webkit-transition: .15s ease-in-out;
+			-moz-transition: .15s ease-in-out;
+			-o-transition: .15s ease-in-out;
+			transition: .15s ease-in-out;
+
+			&:nth-child(1) {
+				top: 0;
+				-webkit-transform-origin: left center;
+				-moz-transform-origin: left center;
+				-o-transform-origin: left center;
+				transform-origin: left center;
+			}
+
+			&:nth-child(2) {
+				top: 9px;
+				-webkit-transform-origin: left center;
+				-moz-transform-origin: left center;
+				-o-transform-origin: left center;
+				transform-origin: left center;
+			}
+
+			&:nth-child(3) {
+				top: 18px;
+				-webkit-transform-origin: left center;
+				-moz-transform-origin: left center;
+				-o-transform-origin: left center;
+				transform-origin: left center;
 			}
 		}
 	}

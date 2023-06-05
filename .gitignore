@@ -145,3 +145,6 @@ vite.config.ts.timestamp-*
 
 # Playwrite test results
 test-results
+
+# Jetbrains and other IDE's
+.idea

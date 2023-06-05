@@ -22,12 +22,12 @@
     expanded = !expanded;
   }
 
-  import { getMonthString } from "./utils.js";
+  import { formatDate } from "./utils.js";
 </script>
 
 <div class="flex flex-col">
-  <p class="pb-2">{getMonthString(start_date)} {start_date.getFullYear()} to {end_date != null ? (getMonthString(end_date) + " " + end_date.getFullYear()) : "Present"}</p>
-  <div class="flex flex-col ml-4 p-2 relative card" on:click={toggleExpansion} on:keydown={toggleExpansion} aria-expanded={expanded}>
+  <p class="pb-2 hasDate">{formatDate(start_date)} to {end_date != null ? formatDate(end_date) : "Present"}</p>
+  <div class="flex flex-col ml-2 sm:ml-4 p-2 relative card" on:click={toggleExpansion} on:keydown={toggleExpansion} aria-expanded={expanded}>
     <div class="flex flex-row justify-between">
       <div class="flex flex-col max-w-[95%]">
         <p class="font-bold">{school}</p>

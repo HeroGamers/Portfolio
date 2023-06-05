@@ -26,7 +26,7 @@
         },
         {
           start_date: new Date("2022-06-01"),
-          end_date: new Date("2023-04-31"),
+          end_date: new Date("2023-04-30"),
           title: "Event Coordinator",
           employment_type: "Volunteer Work"
         }
@@ -66,13 +66,13 @@
       functions: [
         {
           start_date: new Date("2018-04-01"),
-          end_date: new Date("2021-09-31"),
+          end_date: new Date("2021-09-30"),
           title: "Ride Operator",
           employment_type: "Summer Job"
         },
         {
           start_date: new Date("2017-06-01"),
-          end_date: new Date("2021-09-31"),
+          end_date: new Date("2021-09-30"),
           title: "Service Assistant",
           employment_type: "Summer Job"
         }
@@ -105,7 +105,7 @@
 
 <section id="experience" class="flex flex-col pt-10 items-start w-full max-w-5xl">
   <h5 class="font-medium">Experience</h5>
-  <div class="flex flex-col w-full space-y-3 pl-6">
+  <div class="flex flex-col w-full space-y-3 pl-2 sm:pl-6">
     {#each experiences as experience}
       <ExperienceCard {...experience} />
     {/each}
