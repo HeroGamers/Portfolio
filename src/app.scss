@@ -126,9 +126,15 @@ h6 {
     text-decoration: none;
   }
 
+  .card-expansion {
+    overflow: hidden;
+    transition: max-height 1s ease;
+  }
+
   &[aria-expanded='true'] {
     .card-expansion {
-      display: block;
+      // if content in a card takes up more space than 50vh then welp
+      max-height: 50vh;
     }
 
     .dropdown {
@@ -138,7 +144,7 @@ h6 {
 
   &[aria-expanded='false'] {
     .card-expansion {
-      display: none;
+      max-height: 0;
     }
   }
 }
