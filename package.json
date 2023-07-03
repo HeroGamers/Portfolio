@@ -20,7 +20,7 @@
 		"@sveltejs/kit": "^1.20.5",
 		"@types/cookie": "^0.5.1",
 		"autoprefixer": "^10.4.14",
-		"eslint": "^8.43.0",
+		"eslint": "^8.44.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.31.1",
 		"postcss": "^8.4.23",
