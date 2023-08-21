@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^5.0.5",
-		"@playwright/test": "^1.35.1",
+		"@playwright/test": "^1.37.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-cloudflare": "^2.3.1",
 		"@sveltejs/kit": "^1.22.3",
