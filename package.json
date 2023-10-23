@@ -38,7 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource-variable/open-sans": "^5.0.6",
+		"@fontsource-variable/open-sans": "^5.0.18",
 		"@fontsource/roboto": "^5.0.5"
 	}
 }
