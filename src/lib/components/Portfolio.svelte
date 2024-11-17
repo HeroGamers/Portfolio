@@ -72,4 +72,9 @@
 	.portfolio-cards {
 		flex-flow: row wrap;
 	}
+
+	section > div {
+		border-left-width: 2px;
+		border-left-color: $color-bg-top;
+	}
 </style>

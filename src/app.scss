@@ -161,3 +161,12 @@ h6 {
 		}
 	}
 }
+
+.svg-icon {
+	fill: $icon-fill;
+	transition: fill 0.25s ease;
+
+	&:hover {
+		fill: $icon-fill-hover;
+	}
+}
