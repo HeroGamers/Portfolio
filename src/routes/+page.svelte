@@ -14,7 +14,7 @@
 	 * For holding the title of the current page, to use in various places.
 	 * @type String
 	 * */
-	let page_title = 'Aspiring Developer';
+	let page_title = 'Aspiring Cybersecurity Enthusiast';
 
 	// /** @type String */
 	// switch (($page.url.searchParams.get('page') != null ? $page.url.searchParams.get('page').toLowerCase() : "home")) {
