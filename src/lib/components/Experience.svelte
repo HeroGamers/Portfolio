@@ -29,6 +29,20 @@
 			]
 		},
 		{
+			company: 'Kalmarunionen',
+			description:
+				'Team member of the CTF (Capture The Flag) team, Kalmarunionen. ' +
+				'CTF is a cybersecurity competition that is used to test and develop computer security skills.',
+			functions: [
+				{
+					start_date: new Date('2024-03-01'),
+					end_date: null,
+					title: 'CTF Player',
+					employment_type: 'Volunteer Work'
+				}
+			]
+		},
+		{
 			company: "DSE - Students' Business Relations",
 			description:
 				'Active Member of the non-profit non-political organization DSE, whose purpose is to help students' +
