@@ -1,7 +1,7 @@
 <script>
   import PortfolioCard from "./PortfolioCard.svelte";
 
-  /** @type Object[] */
+  /** @type {Array.<{date: Date, project_name: String, programming_language: String, link: String, description: String}>} */
   let portfolioEntries = [
     {
       date: new Date("2023-06-03"),

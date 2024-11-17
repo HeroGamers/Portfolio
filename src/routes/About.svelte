@@ -1,7 +1,7 @@
 <script>
   const birthdate = new Date("2002-03-26");
   // kudos to https://stackoverflow.com/a/24181701/12418245
-  const ageDate = new Date(Date.now() - birthdate);
+  const ageDate = new Date(Date.now() - birthdate.getMilliseconds());
   const age = Math.abs(ageDate.getUTCFullYear() - 1970);
 </script>
 

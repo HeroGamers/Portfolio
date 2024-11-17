@@ -1,7 +1,7 @@
 <script>
   import ExperienceCard from "./ExperienceCard.svelte";
 
-  /** @type Object[] */
+  /** @type Array<{company: String, description: String, functions: Array<{start_date: Date, end_date: Date | null, title: String, employment_type: String}>}> */
   let experiences = [
     {
       company: "DSE - Students' Business Relations",
@@ -16,11 +16,13 @@
       functions: [
         {
           start_date: new Date("2023-04-01"),
+          end_date: null,
           title: "IT Coordinator",
           employment_type: "Volunteer Work"
         },
         {
           start_date: new Date("2022-04-01"),
+          end_date: new Date("2023-11-01"),
           title: "Salesperson",
           employment_type: "Volunteer Work"
         },
@@ -41,6 +43,7 @@
       functions: [
         {
           start_date: new Date("2021-08-01"),
+          end_date: null,
           title: "IT Technician",
           employment_type: "Part-time"
         }
@@ -53,6 +56,7 @@
       functions: [
         {
           start_date: new Date("2019-06-01"),
+          end_date: null,
           title: "Playtester",
           employment_type: "Remote"
         }

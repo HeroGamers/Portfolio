@@ -7,7 +7,7 @@
   export let programming_language = "Python";
   /** @type String */
   export let link = "https://github.com/HeroGamers/Portfolio";
-  /** @type String */
+  /** @type String | null */
   export let description = null;
 
   import { formatDate } from "./utils.js";

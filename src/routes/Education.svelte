@@ -1,10 +1,11 @@
 <script>
   import EducationCard from "./EducationCard.svelte";
 
-  /** @type Object[] */
+  /** @type {Array.<{start_date: Date, end_date: Date | null, school: String, degree: String, description: String | null}>} */
   let educations = [
     {
       start_date: new Date("2021-08-01"),
+      end_date: null,
       school: "DTU - Technical University of Denmark",
       degree: "Bachelor of Engineering - BEng: Software Technology",
       description: "I have developed a strong ability to analyze problems, design solutions, and implement them in " +
