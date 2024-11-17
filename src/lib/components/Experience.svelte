@@ -1,5 +1,5 @@
 <script>
-  import ExperienceCard from "./ExperienceCard.svelte";
+  import ExperienceCard from "$lib/components/ExperienceCard.svelte";
 
   /** @type Array<{company: String, description: String, functions: Array<{start_date: Date, end_date: Date | null, title: String, employment_type: String}>}> */
   let experiences = [

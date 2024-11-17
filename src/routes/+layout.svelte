@@ -1,7 +1,7 @@
 <script>
 	import '../app.postcss';
 	import '../app.scss';
-	import Header from './Header.svelte';
+	import Header from '$lib/components/Header.svelte';
 
 	import "@fontsource/roboto";
 	import "@fontsource-variable/open-sans";

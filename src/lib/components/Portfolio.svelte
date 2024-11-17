@@ -1,5 +1,5 @@
 <script>
-  import PortfolioCard from "./PortfolioCard.svelte";
+  import PortfolioCard from "$lib/components/PortfolioCard.svelte";
 
   /** @type {Array.<{date: Date, project_name: String, programming_language: String, link: String, description: String}>} */
   let portfolioEntries = [

@@ -1,5 +1,5 @@
 <script>
-  import EducationCard from "./EducationCard.svelte";
+  import EducationCard from "$lib/components/EducationCard.svelte";
 
   /** @type {Array.<{start_date: Date, end_date: Date | null, school: String, degree: String, description: String | null}>} */
   let educations = [
