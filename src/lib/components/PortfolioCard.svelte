@@ -13,8 +13,8 @@
   import { formatDate } from "$lib/utils.js";
 </script>
 
-<div class="flex flex-col">
-  <a class="flex flex-col p-2 card m-3" href={link} target="_blank" title={project_name}>
+<div class="flex flex-col p-2 w-full xl:w-1/2 mx-3 xl:mx-0">
+  <a class="flex flex-col card" href={link} target="_blank" title={project_name}>
     <p class="font-bold">{project_name}</p>
     {#if description != null}
       <p class="pt-2">{description}</p>

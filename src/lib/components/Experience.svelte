@@ -4,6 +4,30 @@
   /** @type Array<{company: String, description: String, functions: Array<{start_date: Date, end_date: Date | null, title: String, employment_type: String}>}> */
   let experiences = [
     {
+      company: "TDC Erhverv",
+      description: "At TDC Erhverv, I gained extensive experience in cybersecurity operations through both my roles as a SOC Analyst and SOC Intern. " +
+      "I analyzed complex security incidents, supported Managed Detection and Response (MDR) using SIEM, and developed use cases and detection rules " +
+      "to enhance monitoring capabilities. I optimized workflows by improving SOAR automation, co-managed anti-DDoS solutions, " +
+      "and developed and refined security tools. My responsibilities also included conducting proactive threat hunting, " +
+      "integrating threat intelligence into operations, and coordinating effective incident response plans. " +
+      "Additionally, I engaged with the cybersecurity community by participating in conferences and industry events, " +
+      "further expanding my knowledge and expertise in the field.",
+      functions: [
+        {
+          start_date: new Date("2024-07-01"),
+          end_date: null,
+          title: "Security Operations Center Analyst",
+          employment_type: "Full-time"
+        },
+        {
+          start_date: new Date("2024-02-01"),
+          end_date: new Date("2024-07-01"),
+          title: "Security Operations Center Intern",
+          employment_type: "Internship"
+        }
+      ]
+    },
+    {
       company: "DSE - Students' Business Relations",
       description: "Active Member of the non-profit non-political organization DSE, whose purpose is to help students" +
         " connect with companies. As a system administrator and developer, I have been responsible for maintaining " +
@@ -22,7 +46,7 @@
         },
         {
           start_date: new Date("2022-04-01"),
-          end_date: new Date("2023-11-01"),
+          end_date: new Date("2024-11-01"),
           title: "Salesperson",
           employment_type: "Volunteer Work"
         },
@@ -30,6 +54,12 @@
           start_date: new Date("2022-06-01"),
           end_date: new Date("2023-04-30"),
           title: "Event Coordinator",
+          employment_type: "Volunteer Work"
+        },
+        {
+          start_date: new Date("2022-02-01"),
+          end_date: new Date("2023-04-01"),
+          title: "IT Staff",
           employment_type: "Volunteer Work"
         }
       ]
@@ -43,7 +73,7 @@
       functions: [
         {
           start_date: new Date("2021-08-01"),
-          end_date: null,
+          end_date: new Date("2023-09-01"),
           title: "IT Technician",
           employment_type: "Part-time"
         }
@@ -109,7 +139,7 @@
 
 <section id="experience" class="flex flex-col pt-10 items-start w-full max-w-5xl">
   <h5 class="font-medium">Experience</h5>
-  <div class="flex flex-col w-full space-y-3 pl-2 sm:pl-6">
+  <div class="flex flex-col w-full space-y-3 px-2 sm:px-6">
     {#each experiences as experience}
       <ExperienceCard {...experience} />
     {/each}

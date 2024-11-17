@@ -56,7 +56,7 @@
 
 <section id="portfolio" class="flex flex-col pt-10 items-start w-full">
   <h5 class="font-medium">Portfolio</h5>
-  <div class="flex flex-col w-full portfolio-cards justify-start">
+  <div class="flex flex-col w-full portfolio-cards justify-center pr-2">
     {#each portfolioEntries as portfolioEntry}
       <PortfolioCard {...portfolioEntry} />
     {/each}

@@ -16,6 +16,18 @@
         "high-quality solutions."
     },
     {
+      start_date: new Date("2023-08-01"),
+      end_date: new Date("2024-01-01"),
+      school: "The Hong Kong University of Science and Technology",
+      degree: "Bachelor of Engineering - BEng: Software Technology",
+      description: "Exchange Studies as a part of my bachelor's at the Technical University of Denmark. " +
+        "I got to take several courses in Cyber Security, and gain experience in a different culture, and " +
+        "to learn about the differences in the educational system between Denmark and Hong Kong. " +
+        "I have also gained experience in working with people from different cultures " +
+        "and backgrounds, which has given me a broader perspective on the world and how to work with people from " +
+        "different backgrounds."
+    },
+    {
       start_date: new Date("2018-08-01"),
       end_date: new Date("2021-06-30"),
       school: "HTX Næstved",
@@ -39,7 +51,7 @@
 
 <section id="education" class="flex flex-col pt-10 items-start w-full max-w-5xl">
   <h5 class="font-medium">Education</h5>
-  <div class="flex flex-col w-full space-y-3 pl-2 sm:pl-6">
+  <div class="flex flex-col w-full space-y-3 px-2 sm:px-6">
     {#each educations as education (education.school)}
       <EducationCard {...education} />
     {/each}
