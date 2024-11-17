@@ -27,7 +27,7 @@ test('Contact section exists', async ({ page }) => {
 
 test('Navbar Scroll Indicator', async ({ page }) => {
 	await page.goto('#portfolio');
-	await expect(page.getByTestId("portfolio-navbar")).toHaveAttribute("aria-current", "page");
+	await expect(page.getByTestId('portfolio-navbar')).toHaveAttribute('aria-current', 'page');
 });
 
 test('Valid dates', async ({ page }) => {
@@ -35,8 +35,8 @@ test('Valid dates', async ({ page }) => {
 	const dates = await page.$$('.hasDate');
 	for (const date of dates) {
 		const elementText = await date.textContent();
-		expect(elementText.toLowerCase()).not.toContain("nan");
-		expect(elementText.toLowerCase()).not.toContain("invalid date");
+		expect(elementText.toLowerCase()).not.toContain('nan');
+		expect(elementText.toLowerCase()).not.toContain('invalid date');
 		// this cannot check for 'carryover' months
 	}
 });

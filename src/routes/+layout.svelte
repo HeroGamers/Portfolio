@@ -4,15 +4,15 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
-	import "@fontsource/roboto";
-	import "@fontsource-variable/open-sans";
+	import '@fontsource/roboto';
+	import '@fontsource-variable/open-sans';
 </script>
 
-<div class="flex flex-col md:flex-row min-h-screen">
+<div class="flex min-h-screen flex-col md:flex-row">
 	<Header />
 
-	<div class="md:flex md:flex-col md:flex-1 relative">
-		<main class="flex flex-col flex-1 p-4 w-full h-full box-border">
+	<div class="relative md:flex md:flex-1 md:flex-col">
+		<main class="box-border flex h-full w-full flex-1 flex-col p-4">
 			<slot />
 		</main>
 

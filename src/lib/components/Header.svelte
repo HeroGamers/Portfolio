@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import Logo from '$lib/images/SiteIconSVG.svelte';
 	import GitHubLogo from '$lib/images/GitHubSVG.svelte';
-	import LinkedInSVG from "$lib/images/LinkedInSVG.svelte";
+	import LinkedInSVG from '$lib/images/LinkedInSVG.svelte';
 
 	/**
 	 * Sections of the page
@@ -11,42 +11,42 @@
 	 */
 	let sections = [
 		{
-			id: "home",
-			href: "/",
-			text: "Home",
-			current: "page"
+			id: 'home',
+			href: '/',
+			text: 'Home',
+			current: 'page'
 		},
 		{
-			id: "about",
-			href: "#about",
-			text: "About",
+			id: 'about',
+			href: '#about',
+			text: 'About',
 			current: null
 		},
 		{
-			id: "experience",
-			href: "#experience",
-			text: "Experience",
+			id: 'experience',
+			href: '#experience',
+			text: 'Experience',
 			current: null
 		},
 		{
-			id: "education",
-			href: "#education",
-			text: "Education",
+			id: 'education',
+			href: '#education',
+			text: 'Education',
 			current: null
 		},
 		{
-			id: "portfolio",
-			href: "#portfolio",
-			text: "Portfolio",
+			id: 'portfolio',
+			href: '#portfolio',
+			text: 'Portfolio',
 			current: null
 		},
 		{
-			id: "contact",
-			href: "#contact",
-			text: "Contact",
+			id: 'contact',
+			href: '#contact',
+			text: 'Contact',
 			current: null
 		}
-	]
+	];
 
 	onMount(() => {
 		// console.log("OnMount");
@@ -59,32 +59,31 @@
 		const isCurrentHeader = (id) => {
 			// console.log("isCurrentHeader " + id);
 			// https://stackoverflow.com/a/31712309/12418245
-			const currentScroll = window.scrollY || document.getElementsByTagName("html")[0].scrollTop;
+			const currentScroll = window.scrollY || document.getElementsByTagName('html')[0].scrollTop;
 			const idElem = document.getElementById(id);
 			if (!idElem) {
 				return false;
 			}
 			// console.log(idElem.offsetTop + " < " + (currentScroll + offset_offset) + " = " + (idElem.offsetTop < currentScroll + offset_offset))
 			return idElem.offsetTop < currentScroll + offset_offset;
-		}
+		};
 
 		const getCurrentHeader = () => {
 			// let current_section = 0;
 			for (let i = 0; i < sections.length; i++) {
 				if (i === 0) {
-					sections[i].current = "page";
+					sections[i].current = 'page';
 					continue;
 				}
 
 				if (isCurrentHeader(sections[i].id)) {
 					// console.log("changing current");
-					sections[i].current = "page";
+					sections[i].current = 'page';
 					// current_section = i;
 					if (i > 0) {
-						sections[i-1].current = null;
+						sections[i - 1].current = null;
 					}
-				}
-				else {
+				} else {
 					sections[i].current = null;
 				}
 			}
@@ -98,15 +97,15 @@
 			// if (window.history.replaceState) {
 			// 	window.history.replaceState({}, sections[current_section].text, sections[current_section].href);
 			// }
-		}
+		};
 
 		window.onscroll = () => {
 			// console.log("scroll");
-			getCurrentHeader()
-		}
+			getCurrentHeader();
+		};
 
 		getCurrentHeader();
-	})
+	});
 
 	// onDestroy(() => {
 	// 	window.onscroll = () => {}
@@ -115,40 +114,76 @@
 	let burgerMenuExpanded = false;
 </script>
 
-<header class="flex md:min-h-screen md:max-h-screen">
-	<div class="flex flex-col sm:flex-row justify-between md:flex-col px-2 py-2 md:py-12 md:min-h-screen md:max-h-screen md:px-0 md:fixed md:m-auto">
-		<div class="flex justify-between sm:w-fit sm:justify-center items-center flex-row md:w-full">
-			<a class="flex justify-start md:justify-center w-12 h-12 md:w-20 md:h-20" href="/" title="Home">
+<header class="flex md:max-h-screen md:min-h-screen">
+	<div
+		class="flex flex-col justify-between px-2 py-2 sm:flex-row md:fixed md:m-auto md:max-h-screen md:min-h-screen md:flex-col md:px-0 md:py-12"
+	>
+		<div class="flex flex-row items-center justify-between sm:w-fit sm:justify-center md:w-full">
+			<a
+				class="flex h-12 w-12 justify-start md:h-20 md:w-20 md:justify-center"
+				href="/"
+				title="Home"
+			>
 				<Logo />
-<!--				<img src={logo} alt="HeroGamers" />-->
+				<!--				<img src={logo} alt="HeroGamers" />-->
 			</a>
-	<!--		<hr class="border-t-4 border-purple-400 rounded-2xl mt-2 hidden md:flex" />-->
+			<!--		<hr class="border-t-4 border-purple-400 rounded-2xl mt-2 hidden md:flex" />-->
 
 			<!-- https://stackoverflow.com/a/51813362/12418245 -->
-			<button class="flex justify-end cursor-pointer" on:click={() => (burgerMenuExpanded = !burgerMenuExpanded)} on:keydown={() => (burgerMenuExpanded = !burgerMenuExpanded)}>
-				<ul class="flex justify-end sm:hidden cursor-pointer list-none hamburger-menu" class:expanded={burgerMenuExpanded}>
-					<li></li>
-					<li></li>
-					<li></li>
+			<button
+				class="flex cursor-pointer justify-end"
+				on:click={() => (burgerMenuExpanded = !burgerMenuExpanded)}
+				on:keydown={() => (burgerMenuExpanded = !burgerMenuExpanded)}
+			>
+				<ul
+					class="hamburger-menu flex cursor-pointer list-none justify-end sm:hidden"
+					class:expanded={burgerMenuExpanded}
+				>
+					<li />
+					<li />
+					<li />
 				</ul>
 			</button>
 		</div>
 
-		<nav class="flex flex-col sm:flex-row items-center justify-end md:justify-center w-full" class:expanded={burgerMenuExpanded}>
-			<ul class="flex flex-col sm:flex-row md:flex-col md:space-y-6 items-center justify-center md:items-start list-none w-full sm:w-fit">
+		<nav
+			class="flex w-full flex-col items-center justify-end sm:flex-row md:justify-center"
+			class:expanded={burgerMenuExpanded}
+		>
+			<ul
+				class="flex w-full list-none flex-col items-center justify-center sm:w-fit sm:flex-row md:flex-col md:items-start md:space-y-6"
+			>
 				{#each sections as section}
-					<li aria-current={section.current} class="{section.id}-navbar w-screen text-center flex justify-center md:justify-start h-full sm:w-full" data-testid="{section.id}-navbar">
-						<a class="flex items-center justify-center w-full text-center sm:justify-start" href={section.href} title={section.text}>{section.text}</a>
+					<li
+						aria-current={section.current}
+						class="{section.id}-navbar flex h-full w-screen justify-center text-center sm:w-full md:justify-start"
+						data-testid="{section.id}-navbar"
+					>
+						<a
+							class="flex w-full items-center justify-center text-center sm:justify-start"
+							href={section.href}
+							title={section.text}>{section.text}</a
+						>
 					</li>
 				{/each}
 			</ul>
 		</nav>
 
-		<div class="justify-center w-full flex-row hidden md:flex space-x-5">
-			<a class="flex justify-center socials h-10 w-10" href="https://github.com/HeroGamers" target="_blank" title="GitHub">
+		<div class="hidden w-full flex-row justify-center space-x-5 md:flex">
+			<a
+				class="socials flex h-10 w-10 justify-center"
+				href="https://github.com/HeroGamers"
+				target="_blank"
+				title="GitHub"
+			>
 				<GitHubLogo />
 			</a>
-			<a class="flex justify-center socials h-10 w-10" href="https://linkedin.com/in/marcus-sand" target="_blank" title="LinkedIn">
+			<a
+				class="socials flex h-10 w-10 justify-center"
+				href="https://linkedin.com/in/marcus-sand"
+				target="_blank"
+				title="LinkedIn"
+			>
 				<LinkedInSVG />
 			</a>
 		</div>
@@ -270,10 +305,10 @@
 		-moz-transform: rotate(0deg);
 		-o-transform: rotate(0deg);
 		transform: rotate(0deg);
-		-webkit-transition: .3s ease-in-out;
-		-moz-transition: .3s ease-in-out;
-		-o-transition: .3s ease-in-out;
-		transition: .3s ease-in-out;
+		-webkit-transition: 0.3s ease-in-out;
+		-moz-transition: 0.3s ease-in-out;
+		-o-transition: 0.3s ease-in-out;
+		transition: 0.3s ease-in-out;
 
 		&.expanded {
 			li {
@@ -317,10 +352,10 @@
 			-moz-transform: rotate(0deg);
 			-o-transform: rotate(0deg);
 			transform: rotate(0deg);
-			-webkit-transition: .15s ease-in-out;
-			-moz-transition: .15s ease-in-out;
-			-o-transition: .15s ease-in-out;
-			transition: .15s ease-in-out;
+			-webkit-transition: 0.15s ease-in-out;
+			-moz-transition: 0.15s ease-in-out;
+			-o-transition: 0.15s ease-in-out;
+			transition: 0.15s ease-in-out;
 
 			&:nth-child(1) {
 				top: 0;

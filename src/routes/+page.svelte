@@ -1,20 +1,20 @@
 <script>
-	import { page } from "$app/stores";
-	import Title from "$lib/components/Title.svelte";
-	import About from "$lib/components/About.svelte";
-	import Experience from "$lib/components/Experience.svelte";
-	import Education from "$lib/components/Education.svelte";
-	import Portfolio from "$lib/components/Portfolio.svelte";
-	import Contact from "$lib/components/Contact.svelte";
+	import { page } from '$app/stores';
+	import Title from '$lib/components/Title.svelte';
+	import About from '$lib/components/About.svelte';
+	import Experience from '$lib/components/Experience.svelte';
+	import Education from '$lib/components/Education.svelte';
+	import Portfolio from '$lib/components/Portfolio.svelte';
+	import Contact from '$lib/components/Contact.svelte';
 
 	/** @type String */
-	const description = "A student, aspiring to become a full-time developer.";
+	const description = 'A student, aspiring to become a full-time developer.';
 
 	/**
 	 * For holding the title of the current page, to use in various places.
 	 * @type String
 	 * */
-	let page_title = "Aspiring Developer";
+	let page_title = 'Aspiring Developer';
 
 	// /** @type String */
 	// switch (($page.url.searchParams.get('page') != null ? $page.url.searchParams.get('page').toLowerCase() : "home")) {
@@ -32,16 +32,16 @@
 	//		document.querySelector($page.url.searchParams.get('page')).scrollIntoView();
 	//	}
 
-		// let title = $page_title ? 'Hero \u2014 ${$page_title}' : 'Hero';
-		//
-		// document.title = title;
+	// let title = $page_title ? 'Hero \u2014 ${$page_title}' : 'Hero';
+	//
+	// document.title = title;
 	//});
 </script>
 
 <svelte:head>
 	<title>Hero - {page_title}</title>
 	<!-- Basic Metadata-->
-	<meta name="description" content="{description}" />
+	<meta name="description" content={description} />
 	<meta name="keywords" content="HeroGamers, Marcus Sand, Portfolio, Website, Personal Website" />
 	<meta name="author" content="Marcus Sand" />
 	<meta name="application-name" content="&nbsp;" />
@@ -57,17 +57,19 @@
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<div class="flex flex-col justify-top items-start md:mt-8 md:ml-5 content-container overflow-x-hidden">
+<div
+	class="justify-top content-container flex flex-col items-start overflow-x-hidden md:ml-5 md:mt-8"
+>
 	<Title />
 	<About />
-	<div class="flex flex-col xl:flex-row xl:justify-evenly xl:w-full xl:space-x-10">
+	<div class="flex flex-col xl:w-full xl:flex-row xl:justify-evenly xl:space-x-10">
 		<Experience />
 		<Education />
 	</div>
 	<Portfolio />
 	<Contact />
 </div>
-<div class="flex flex-1 justify-center items-center mb-20 flex-col">
+<div class="mb-20 flex flex-1 flex-col items-center justify-center">
 	<h5>Thanks for visiting!</h5>
 </div>
 

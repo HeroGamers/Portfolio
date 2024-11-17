@@ -10,9 +10,9 @@ export default defineConfig({
 	// https://vite.dev/config/shared-options#css-preprocessoroptions
 	css: {
 		preprocessorOptions: {
-		  scss: {
-			api: 'modern-compiler' // or "modern"
-		  }
+			scss: {
+				api: 'modern-compiler' // or "modern"
+			}
 		}
 	}
 });
