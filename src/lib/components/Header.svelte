@@ -134,14 +134,15 @@
 				class="flex cursor-pointer justify-end"
 				on:click={() => (burgerMenuExpanded = !burgerMenuExpanded)}
 				on:keydown={() => (burgerMenuExpanded = !burgerMenuExpanded)}
+				aria-label="Toggle navigation"
 			>
 				<ul
 					class="hamburger-menu flex cursor-pointer list-none justify-end sm:hidden"
 					class:expanded={burgerMenuExpanded}
 				>
-					<li />
-					<li />
-					<li />
+					<li></li>
+					<li></li>
+					<li></li>
 				</ul>
 			</button>
 		</div>
