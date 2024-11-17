@@ -3,22 +3,27 @@
 
   /** @type Date */
   export let start_date = new Date();
-  /** @type Date */
+  /** @type Date | null */
   export let end_date = null;
   /** @type String */
   export let school = "School";
   /** @type String */
   export let degree = "Degree";
-  /** @type String */
+  /** @type String | null */
   export let description = null;
 
   /** @type boolean */
   let expanded = false;
 
   /**
-   * @type any
+   * @param {MouseEvent | KeyboardEvent} event
    */
-  const toggleExpansion = () => {
+   const toggleExpansion = (event) => {
+    // If the event is a keyboard event, check if the key is not "Enter" or " ", to prevent Tab from toggling the expansion
+    if (event instanceof KeyboardEvent && event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+    
     expanded = !expanded;
   }
 
@@ -26,8 +31,8 @@
 </script>
 
 <div class="flex flex-col">
-  <p class="pb-2 hasDate">{formatDate(start_date)} to {end_date != null ? formatDate(end_date) : "Present"}</p>
-  <div class="flex flex-col ml-2 sm:ml-4 p-2 relative card" on:click={toggleExpansion} on:keydown={toggleExpansion} aria-expanded={expanded}>
+  <p class="pb-2 hasDate">{start_date != null ? formatDate(start_date) : "Unknown"} to {end_date != null ? formatDate(end_date) : "Present"}</p>
+  <div class="flex flex-col ml-2 sm:ml-4 p-2 relative card" on:click={toggleExpansion} on:keydown={toggleExpansion} aria-expanded={expanded} role="button" tabindex="0">
     <div class="flex flex-row justify-between">
       <div class="flex flex-col max-w-[95%]">
         <p class="font-bold">{school}</p>

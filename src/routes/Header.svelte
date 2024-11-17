@@ -125,11 +125,13 @@
 	<!--		<hr class="border-t-4 border-purple-400 rounded-2xl mt-2 hidden md:flex" />-->
 
 			<!-- https://stackoverflow.com/a/51813362/12418245 -->
-			<ul class="flex justify-end sm:hidden cursor-pointer list-none hamburger-menu" class:expanded={burgerMenuExpanded} on:click={() => (burgerMenuExpanded = !burgerMenuExpanded)} on:keydown={() => (burgerMenuExpanded = !burgerMenuExpanded)}>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
+			<button class="flex justify-end cursor-pointer" on:click={() => (burgerMenuExpanded = !burgerMenuExpanded)} on:keydown={() => (burgerMenuExpanded = !burgerMenuExpanded)}>
+				<ul class="flex justify-end sm:hidden cursor-pointer list-none hamburger-menu" class:expanded={burgerMenuExpanded}>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</button>
 		</div>
 
 		<nav class="flex flex-col sm:flex-row items-center justify-end md:justify-center w-full" class:expanded={burgerMenuExpanded}>

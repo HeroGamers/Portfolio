@@ -3,9 +3,9 @@
 
   /** @type String */
   export let company = "Company Name";
-  /** @type String */
+  /** @type String | null */
   export let description = null;
-  /** @type [{start_date: Date, end_date: Date, title: String, employment_type: String}] */
+  /** @type Array<{start_date: Date, end_date: Date | null, title: String, employment_type: String}> */
   export let functions = [{
     start_date: new Date(),
     end_date: null,
@@ -17,19 +17,24 @@
   let expanded = false;
 
   /**
-   * @type any
+   * @param {MouseEvent | KeyboardEvent} event
    */
-  const toggleExpansion = () => {
+  const toggleExpansion = (event) => {
+    // If the event is a keyboard event, check if the key is not "Enter" or " ", to prevent Tab from toggling the expansion
+    if (event instanceof KeyboardEvent && event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
     expanded = !expanded;
   }
 
   // Get the "newest" end date and the oldest start date for the entire company,
   // and check if employment types are equal
-  /** @type Date */
+  /** @type Date | undefined | null */
   let oldest_start_date = undefined;
-  /** @type Date */
+  /** @type Date | undefined | null */
   let newest_end_date = undefined;
-  /** @type String */
+  /** @type String | undefined | null */
   let employmentType = undefined;
 
   functions.forEach((func_at_company) => {
@@ -74,8 +79,8 @@
 </script>
 
 <div class="flex flex-col">
-  <p class="pb-2 hasDate">{formatDate(oldest_start_date)} to {newest_end_date != null ? formatDate(newest_end_date) : "Present"}</p>
-  <div class="flex flex-col ml-2 sm:ml-4 p-2 relative card" on:click={toggleExpansion} on:keydown={toggleExpansion} aria-expanded={expanded}>
+  <p class="pb-2 hasDate">{oldest_start_date != null ? formatDate(oldest_start_date) : "Unknown"} to {newest_end_date != null ? formatDate(newest_end_date) : "Present"}</p>
+  <div class="flex flex-col ml-2 sm:ml-4 p-2 relative card" on:click={toggleExpansion} on:keydown={toggleExpansion} aria-expanded={expanded} role="button" tabindex="0">
     <div class="flex flex-row justify-between">
       <div class="flex flex-col max-w-[95%]">
         <p class="font-bold">
