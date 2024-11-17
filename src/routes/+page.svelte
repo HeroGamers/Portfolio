@@ -1,11 +1,11 @@
 <script>
 	import { page } from "$app/stores";
-	import Title from "./Title.svelte";
-	import About from "./About.svelte";
-	import Experience from "./Experience.svelte";
-	import Education from "./Education.svelte";
-	import Portfolio from "./Portfolio.svelte";
-	import Contact from "./Contact.svelte";
+	import Title from "$lib/components/Title.svelte";
+	import About from "$lib/components/About.svelte";
+	import Experience from "$lib/components/Experience.svelte";
+	import Education from "$lib/components/Education.svelte";
+	import Portfolio from "$lib/components/Portfolio.svelte";
+	import Contact from "$lib/components/Contact.svelte";
 
 	/** @type String */
 	const description = "A student, aspiring to become a full-time developer.";
