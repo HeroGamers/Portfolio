@@ -5,6 +5,10 @@
 	import GitHubLogo from '$lib/images/GitHubSVG.svelte';
 	import LinkedInSVG from "$lib/images/LinkedInSVG.svelte";
 
+	/**
+	 * Sections of the page
+	 * @type {Array.<{id: string, href: string, text: string, current: "page" | null}>}
+	 */
 	let sections = [
 		{
 			id: "home",
@@ -16,31 +20,31 @@
 			id: "about",
 			href: "#about",
 			text: "About",
-			current: false
+			current: null
 		},
 		{
 			id: "experience",
 			href: "#experience",
 			text: "Experience",
-			current: false
+			current: null
 		},
 		{
 			id: "education",
 			href: "#education",
 			text: "Education",
-			current: false
+			current: null
 		},
 		{
 			id: "portfolio",
 			href: "#portfolio",
 			text: "Portfolio",
-			current: false
+			current: null
 		},
 		{
 			id: "contact",
 			href: "#contact",
 			text: "Contact",
-			current: false
+			current: null
 		}
 	]
 
@@ -48,11 +52,18 @@
 		// console.log("OnMount");
 
 		const offset_offset = 100;
+		/**
+		 * Check if the header is the current header
+		 * @param {string} id - The id of the header
+		 */
 		const isCurrentHeader = (id) => {
 			// console.log("isCurrentHeader " + id);
 			// https://stackoverflow.com/a/31712309/12418245
-			const currentScroll = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+			const currentScroll = window.scrollY || document.getElementsByTagName("html")[0].scrollTop;
 			const idElem = document.getElementById(id);
+			if (!idElem) {
+				return false;
+			}
 			// console.log(idElem.offsetTop + " < " + (currentScroll + offset_offset) + " = " + (idElem.offsetTop < currentScroll + offset_offset))
 			return idElem.offsetTop < currentScroll + offset_offset;
 		}
@@ -70,11 +81,11 @@
 					sections[i].current = "page";
 					// current_section = i;
 					if (i > 0) {
-						sections[i-1].current = false;
+						sections[i-1].current = null;
 					}
 				}
 				else {
-					sections[i].current = false;
+					sections[i].current = null;
 				}
 			}
 

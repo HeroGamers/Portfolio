@@ -1,4 +1,4 @@
-import preprocess from 'svelte-preprocess';
+import { sveltePreprocess } from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-cloudflare';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -17,10 +17,11 @@ const config = {
 	},
 
 	preprocess: [
-		preprocess({
+		sveltePreprocess({
 			scss: {
-				// prependData: `@use 'src/variables.scss' as *;`
-				prependData: `@import 'src/variables.scss';`
+				prependData: `@use 'src/variables.scss' as *;`
+				// https://sass-lang.com/blog/import-is-deprecated/
+				// prependData: `@import 'src/variables.scss';`
 			},
 
 			postcss: true
