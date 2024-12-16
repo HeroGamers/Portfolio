@@ -17,7 +17,7 @@
 		"@playwright/test": "^1.48.2",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-cloudflare": "^4.7.4",
-		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/kit": "^2.11.1",
 		"@sveltejs/vite-plugin-svelte": "^4.0.1",
 		"@types/cookie": "^1.0.0",
 		"autoprefixer": "^10.4.16",
