@@ -1,6 +1,8 @@
 <script>
 	// import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import Logo from '$lib/images/SiteIconSVG.svelte';
 	import GitHubLogo from '$lib/images/GitHubSVG.svelte';
 	import LinkedInSVG from '$lib/images/LinkedInSVG.svelte';
@@ -121,7 +123,8 @@
 		<div class="flex flex-row items-center justify-between sm:w-fit sm:justify-center md:w-full">
 			<a
 				class="flex h-12 w-12 justify-start md:h-20 md:w-20 md:justify-center"
-				href="/"
+				href={resolve('/')}
+				on:click={() => goto(resolve('/'))}
 				title="Home"
 			>
 				<Logo />
@@ -154,15 +157,17 @@
 			<ul
 				class="flex w-full list-none flex-col items-center justify-center sm:w-fit sm:flex-row md:flex-col md:items-start md:space-y-6"
 			>
-				{#each sections as section}
+				{#each sections as section (section.id)}
 					<li
 						aria-current={section.current}
 						class="{section.id}-navbar flex h-full w-screen justify-center text-center sm:w-full md:justify-start"
 						data-testid="{section.id}-navbar"
 					>
+						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 						<a
 							class="flex w-full items-center justify-center text-center sm:justify-start"
 							href={section.href}
+							on:click={() => goto(section.href)}
 							title={section.text}>{section.text}</a
 						>
 					</li>

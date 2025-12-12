@@ -160,7 +160,7 @@
 <section id="experience" class="flex w-full max-w-5xl flex-col items-start pt-10">
 	<h5 class="font-medium">Experience</h5>
 	<div class="flex w-full flex-col space-y-3 px-2 sm:px-6">
-		{#each experiences as experience}
+		{#each experiences as experience (experience.company)}
 			<ExperienceCard {...experience} />
 		{/each}
 	</div>

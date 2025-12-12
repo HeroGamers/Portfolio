@@ -101,7 +101,7 @@
 						&bull; {employmentType}
 					{/if}
 				</p>
-				{#each functions as func_at_company}
+				{#each functions as func_at_company, index (index)}
 					<p class="hasDate font-medium">
 						- {func_at_company.title} ({formatDate(func_at_company.start_date)} to {func_at_company.end_date !=
 						null

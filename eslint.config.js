@@ -10,6 +10,12 @@ export default [
 	prettier,
 	...svelte.configs['flat/prettier'],
 	{
+		rules: {
+			// @see https://github.com/sveltejs/eslint-plugin-svelte/issues/1353
+			'svelte/no-navigation-without-resolve': 'off'
+		}
+	},
+	{
 		languageOptions: {
 			globals: {
 				...globals.browser,

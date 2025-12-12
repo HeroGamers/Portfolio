@@ -58,7 +58,7 @@
 </svelte:head>
 
 <div
-	class="justify-top content-container flex flex-col items-start overflow-x-hidden md:ml-5 md:mt-8"
+	class="justify-top content-container flex flex-col items-start overflow-x-hidden md:mt-8 md:ml-5"
 >
 	<Title />
 	<About />

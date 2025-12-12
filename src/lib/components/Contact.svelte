@@ -1,4 +1,4 @@
-<section id="contact" class="flex w-full flex-col items-start items-center pt-10">
+<section id="contact" class="flex w-full flex-col items-center items-start pt-10">
 	<div class="max-w-5xl">
 		<h5 class="w-full text-center font-medium">Contact</h5>
 		<p class="pb-2">
