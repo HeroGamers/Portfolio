@@ -148,3 +148,6 @@ test-results
 
 # Jetbrains and other IDE's
 .idea
+
+# Wrangler configuration and build output
+.wrangler
