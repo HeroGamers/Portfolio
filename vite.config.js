@@ -11,7 +11,7 @@ export default defineConfig({
 		preprocessorOptions: {
 			scss: {
 				additionalData: '@use "variables.scss" as *;',
-				loadPaths: ['src'],
+				loadPaths: ['src']
 				// https://sass-lang.com/documentation/breaking-changes/legacy-js-api/
 				// api: 'modern-compiler' // or "modern"
 			}
