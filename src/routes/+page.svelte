@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Title from '$lib/components/Title.svelte';
 	import About from '$lib/components/About.svelte';
 	import Experience from '$lib/components/Experience.svelte';
@@ -42,17 +42,12 @@
 	<title>Hero - {page_title}</title>
 	<!-- Basic Metadata-->
 	<meta name="description" content={description} />
-	<meta name="keywords" content="HeroGamers, Marcus Sand, Portfolio, Website, Personal Website" />
-	<meta name="author" content="Marcus Sand" />
-	<meta name="application-name" content="&nbsp;" />
-	<meta name="msapplication-TileColor" content="#6F3C97" />
 	<!-- Facebook Metadata-->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content={$page.url.href} />
+	<meta property="og:url" content={page.url.href} />
 	<meta property="og:title" content={page_title} />
 	<meta property="og:description" content={description} />
 	<!-- Twitter Metadata-->
-	<meta property="twitter:url" content={$page.url.href} />
+	<meta property="twitter:url" content={page.url.href} />
 	<meta property="twitter:title" content={page_title} />
 	<meta property="twitter:description" content={description} />
 </svelte:head>
