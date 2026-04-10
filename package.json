@@ -47,6 +47,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/open-sans": "^5.2.7",
-		"@fontsource/roboto": "^5.2.10"
+		"@fontsource/roboto": "^5.2.10",
+		"reveal.js": "^6.0.0"
 	}
 }
