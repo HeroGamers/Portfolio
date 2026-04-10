@@ -9,4 +9,9 @@ declare global {
 	}
 }
 
+declare module '*.postcss';
+declare module '*.scss';
+declare module '@fontsource/*';
+declare module '@fontsource-variable/*';
+
 export {};

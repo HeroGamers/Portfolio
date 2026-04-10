@@ -10,8 +10,8 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
-				// Handled by svelte.config.js
-				// additionalData: '@use "src/variables.scss" as *;',
+				additionalData: '@use "variables.scss" as *;',
+				loadPaths: ['src'],
 				// https://sass-lang.com/documentation/breaking-changes/legacy-js-api/
 				// api: 'modern-compiler' // or "modern"
 			}
