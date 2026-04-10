@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 	import RevealSlides from '$lib/components/RevealSlides.svelte';
 
-	import youveGotMail from './youve-got-mail.md?raw';
+	import youveGotMail2 from './youve-got-mail-2.md?raw';
 
 	/** @type String */
 	const description = 'Some stuff for the DDC FastTrack 2026 CTF competition.';
@@ -36,5 +36,15 @@
 		work in progress, and I might be adding more details and writeups as I have time to do so.
 	</p>
 
-	<RevealSlides options={{ transition: 'convex' }} markdownContent={youveGotMail} />
+	<h2>Challenges</h2>
+	<ul class="ml-5 list-disc">
+		<!-- <li><a href="#youve-got-mail">Youve got mail!</a></li> -->
+		<li><a href="#youve-got-mail-2">Youve got mail 2!</a></li>
+	</ul>
+
+	<!-- <h2 id="youve-got-mail" class="mt-8 mb-4 text-2xl font-bold">Youve got mail!</h2>
+	<RevealSlides options={{ transition: 'convex' }} markdownContent={youveGotMail} /> -->
+
+	<h2 id="youve-got-mail-2" class="mt-8 mb-4 text-2xl font-bold">Youve got mail 2!</h2>
+	<RevealSlides options={{ transition: 'convex' }} markdownContent={youveGotMail2} />
 </div>
