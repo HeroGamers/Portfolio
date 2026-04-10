@@ -3,6 +3,7 @@
 	import RevealSlides from '$lib/components/RevealSlides.svelte';
 
 	import youveGotMail2 from './youve-got-mail-2.md?raw';
+	import windowsForensicsHell from './windows-forensics-hell.md?raw';
 
 	/** @type String */
 	const description = 'Some stuff for the DDC FastTrack 2026 CTF competition.';
@@ -40,6 +41,7 @@
 	<ul class="ml-5 list-disc">
 		<!-- <li><a href="#youve-got-mail">Youve got mail!</a></li> -->
 		<li><a href="#youve-got-mail-2">Youve got mail 2!</a></li>
+		<li><a href="#windows-forensics-hell">Windows Forensics Hell</a></li>
 	</ul>
 
 	<!-- <h2 id="youve-got-mail" class="mt-8 mb-4 text-2xl font-bold">Youve got mail!</h2>
@@ -47,4 +49,7 @@
 
 	<h2 id="youve-got-mail-2" class="mt-8 mb-4 text-2xl font-bold">Youve got mail 2!</h2>
 	<RevealSlides options={{ transition: 'convex' }} markdownContent={youveGotMail2} />
+
+	<h2 id="windows-forensics-hell" class="mt-8 mb-4 text-2xl font-bold">Windows Forensics Hell</h2>
+	<RevealSlides options={{ transition: 'convex' }} markdownContent={windowsForensicsHell} />
 </div>
