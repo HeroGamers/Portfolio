@@ -4,6 +4,10 @@ Walkthrough by Hero
 
 ---
 
+> Dammit!... I did it again... But this time it seemed sooooo convincing? Like what even happened?...
+
+---
+
 ## Analyzing the zip
 
 We check and extract the file from the handout
