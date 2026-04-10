@@ -9,7 +9,7 @@
 
 	/**
 	 * Sections of the page
-	 * @type {Array.<{id: string, href: string, text: string, current: "page" | null}>}
+	 * @type {Array.<{id: string | null, href: string, text: string, current: "page" | null}>}
 	 */
 	let sections = [
 		{
@@ -20,31 +20,37 @@
 		},
 		{
 			id: 'about',
-			href: '#about',
+			href: '/#about',
 			text: 'About',
 			current: null
 		},
 		{
 			id: 'experience',
-			href: '#experience',
+			href: '/#experience',
 			text: 'Experience',
 			current: null
 		},
 		{
 			id: 'education',
-			href: '#education',
+			href: '/#education',
 			text: 'Education',
 			current: null
 		},
 		{
 			id: 'portfolio',
-			href: '#portfolio',
+			href: '/#portfolio',
 			text: 'Portfolio',
 			current: null
 		},
 		{
+			id: null,
+			href: '/blog',
+			text: 'Blog',
+			current: null
+		},
+		{
 			id: 'contact',
-			href: '#contact',
+			href: '/#contact',
 			text: 'Contact',
 			current: null
 		}
@@ -56,9 +62,12 @@
 		const offset_offset = 100;
 		/**
 		 * Check if the header is the current header
-		 * @param {string} id - The id of the header
+		 * @param {string | null} id - The id of the header
 		 */
 		const isCurrentHeader = (id) => {
+			if (!id) {
+				return false;
+			}
 			// console.log("isCurrentHeader " + id);
 			// https://stackoverflow.com/a/31712309/12418245
 			const currentScroll = window.scrollY || document.getElementsByTagName('html')[0].scrollTop;
