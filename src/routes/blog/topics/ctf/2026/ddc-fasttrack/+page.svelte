@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/state';
+	import RevealSlides from '$lib/components/RevealSlides.svelte';
 
 	/** @type String */
 	const description = 'Some stuff for the DDC FastTrack 2026 CTF competition.';
@@ -27,4 +28,24 @@
 
 <div class="flex flex-col items-start overflow-x-hidden md:mt-8 md:ml-5">
 	<h1>DDC FastTrack 2026</h1>
+
+	<p class="mt-3 mb-4 max-w-3xl">
+		Challenge writeups for some of the challs I solved during the DDC FastTrack 2026 CTF. This is a
+		work in progress, and I might be adding more details and writeups as I have time to do so.
+	</p>
+
+	<RevealSlides options={{ transition: 'convex' }}>
+		<section>
+			<h2>DDC FastTrack 2026</h2>
+			<p>Writeup by Hero</p>
+		</section>
+
+		<section>
+			<h2>Example Slide</h2>
+			<ul>
+				<li>Category: Forensics</li>
+				<li>No one would find this commit, right?</li>
+			</ul>
+		</section>
+	</RevealSlides>
 </div>
