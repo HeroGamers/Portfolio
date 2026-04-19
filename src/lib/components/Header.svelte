@@ -1,7 +1,6 @@
 <script>
-	// import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import Logo from '$lib/images/SiteIconSVG.svelte';
 	import GitHubLogo from '$lib/images/GitHubSVG.svelte';
@@ -16,7 +15,7 @@
 			id: 'home',
 			href: '/',
 			text: 'Home',
-			current: 'page'
+			current: null
 		},
 		{
 			id: 'about',
@@ -56,66 +55,83 @@
 		}
 	];
 
-	onMount(() => {
-		// console.log("OnMount");
+	const offset_offset = 100;
+	/**
+	 * Check if the header is the current header
+	 * @param {string | null} id - The id of the header
+	 */
+	const isCurrentHeader = (id) => {
+		if (!id || typeof window === 'undefined') {
+			return false;
+		}
+		const currentScroll = window.scrollY || document.getElementsByTagName('html')[0].scrollTop;
+		const idElem = document.getElementById(id);
+		if (!idElem) {
+			return false;
+		}
+		return idElem.offsetTop < currentScroll + offset_offset;
+	};
 
-		const offset_offset = 100;
-		/**
-		 * Check if the header is the current header
-		 * @param {string | null} id - The id of the header
-		 */
-		const isCurrentHeader = (id) => {
-			if (!id) {
-				return false;
-			}
-			// console.log("isCurrentHeader " + id);
-			// https://stackoverflow.com/a/31712309/12418245
-			const currentScroll = window.scrollY || document.getElementsByTagName('html')[0].scrollTop;
-			const idElem = document.getElementById(id);
-			if (!idElem) {
-				return false;
-			}
-			// console.log(idElem.offsetTop + " < " + (currentScroll + offset_offset) + " = " + (idElem.offsetTop < currentScroll + offset_offset))
-			return idElem.offsetTop < currentScroll + offset_offset;
-		};
+	const getCurrentHeader = () => {
+		if (typeof window === 'undefined') {
+			return;
+		}
 
-		const getCurrentHeader = () => {
-			// let current_section = 0;
+		const pathname = window.location.pathname;
+		const hash = window.location.hash;
+		let activeIndex = -1;
+
+		for (let i = 0; i < sections.length; i++) {
+			const [sectionPath, sectionHash] = sections[i].href.split('#');
+			const hasHash = sectionHash != null && sectionHash.length > 0;
+
+			if (hasHash) {
+				if (pathname === sectionPath && hash === '#' + sectionHash) {
+					activeIndex = i;
+				}
+				continue;
+			}
+
+			if (
+				(sectionPath === '/' && pathname === '/') ||
+				(sectionPath !== '/' && (pathname === sectionPath || pathname.startsWith(sectionPath + '/')))
+			) {
+				activeIndex = i;
+			}
+		}
+
+		if (pathname === '/') {
 			for (let i = 0; i < sections.length; i++) {
-				if (i === 0) {
-					sections[i].current = 'page';
-					continue;
-				}
-
 				if (isCurrentHeader(sections[i].id)) {
-					// console.log("changing current");
-					sections[i].current = 'page';
-					// current_section = i;
-					if (i > 0) {
-						sections[i - 1].current = null;
-					}
-				} else {
-					sections[i].current = null;
+					activeIndex = i;
 				}
 			}
+		}
 
-			// console.log("updating sections");
-			// console.table(sections);
-			// sections = sections;
+		for (let i = 0; i < sections.length; i++) {
+			sections[i].current = i === activeIndex ? 'page' : null;
+		}
+		sections = [...sections];
+	};
 
-			// window.location.hash = sections[current_section].id;
-			// document.getElementsByClassName(sections[current_section].id + "-navbar")[0].ariaCurrent = true;
-			// if (window.history.replaceState) {
-			// 	window.history.replaceState({}, sections[current_section].text, sections[current_section].href);
-			// }
-		};
+	const updateCurrentHeader = () => {
+		getCurrentHeader();
+	};
 
-		window.onscroll = () => {
-			// console.log("scroll");
-			getCurrentHeader();
-		};
+	afterNavigate(() => {
+		updateCurrentHeader();
+	});
+
+	onMount(() => {
+		window.addEventListener('scroll', updateCurrentHeader, { passive: true });
+		window.addEventListener('hashchange', updateCurrentHeader);
 
 		getCurrentHeader();
+
+		return () => {
+			window.removeEventListener('scroll', updateCurrentHeader);
+			window.removeEventListener('hashchange', updateCurrentHeader);
+		};
 	});
 
 	// onDestroy(() => {
