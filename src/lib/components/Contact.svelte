@@ -7,7 +7,7 @@
 		<ul class="flex w-full max-w-sm flex-1 flex-col">
 			<li class="flex w-full flex-row">
 				<p class="w-full">Email:</p>
-				<a class="w-full" href="mailto:hero@herogamers.dev" target="_blank">hero@herogamers.dev</a>
+				<p class="w-full" id="email" aria-label="Email address"></p>
 			</li>
 			<li class="flex w-full flex-row">
 				<p class="w-full">Keybase (encrypted):</p>
@@ -18,3 +18,33 @@
 		</ul>
 	</div>
 </section>
+
+<style lang="scss">
+	#email {
+		position: relative;
+		display: inline-flex;
+		min-height: 1.2em;
+		font-family: 'Courier New', Courier, monospace;
+		color: $color-theme-1;
+	}
+
+	#email::before,
+	#email::after {
+		opacity: 0;
+		animation: show-email 1ms linear 350ms forwards;
+	}
+
+	#email::before {
+		content: 'hero';
+	}
+
+	#email::after {
+		content: '@herogamers.dev';
+	}
+
+	@keyframes show-email {
+		to {
+			opacity: 1;
+		}
+	}
+</style>

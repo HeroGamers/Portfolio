@@ -9,9 +9,8 @@
 	<div class="flex max-w-5xl flex-col items-start">
 		<h5 class="w-full text-center font-medium">About me</h5>
 		<p>
-			Hi there, my name is Marcus, and I'm a {age}-year-old Security Analyst currently working
-			full-time in Cybersecurity while living in Copenhagen, Denmark. Starting next year, I'll be
-			pursuing an
+			Hi there, my name is Marcus, and I'm a {age}-year-old Security Analyst currently working in
+			Cybersecurity while living in Copenhagen, Denmark. I'm also currently pursuing an
 			<a href="https://www.en.aau.dk/education/master/cyber-security" rel="_blank"
 				>MSc in Cyber Security</a
 			>
@@ -28,8 +27,8 @@
 		<p class="pt-2">
 			I've worked on a variety of projects, from enhancing security tools and workflows in
 			professional settings to participating in Capture the Flag (CTF) competitions with
-			Kalmarunionen, which sharpen my practical skills and problem-solving abilities. This website
-			serves as a portfolio showcasing my journey and accomplishments in technology and
+			Kalmarunionen, in order to sharpen my practical skills and problem-solving abilities. This
+			website serves as a portfolio showcasing my journey and accomplishments in technology and
 			cybersecurity.
 		</p>
 	</div>
