@@ -6,8 +6,8 @@
 		{
 			company: 'TDC Erhverv',
 			description:
-				'At TDC Erhverv, I gained extensive experience in cybersecurity operations through both my roles as a SOC Analyst and SOC Intern. ' +
-				'I analyzed complex security incidents, supported Managed Detection and Response (MDR) using SIEM, and developed use cases and detection rules ' +
+				'At TDC Erhverv, a company under the TDC Group (telecommunications), I gained extensive experience in cybersecurity operations through my role as a SOC Analyst. ' +
+				'I analyzed complex security incidents, supported Managed Detection and Response (MDR) using different SIEM platforms, and developed use cases and detection rules ' +
 				'to enhance monitoring capabilities. I optimized workflows by improving SOAR automation, co-managed anti-DDoS solutions, ' +
 				'and developed and refined security tools. My responsibilities also included conducting proactive threat hunting, ' +
 				'integrating threat intelligence into operations, and coordinating effective incident response plans. ' +
@@ -51,8 +51,8 @@
 		{
 			company: "DSE - Students' Business Relations",
 			description:
-				'Active Member of the non-profit non-political organization DSE, whose purpose is to help students' +
-				' connect with companies. As a system administrator and developer, I have been responsible for maintaining ' +
+				'Previous member of the non-profit non-political organization DSE, whose purpose is to help students' +
+				' connect with companies. As a system administrator and developer, I was responsible for maintaining ' +
 				'and developing both new and existing systems in DSE, which has given me the ability to understand, enhance,' +
 				' and refactor code created by previous members. As an event coordinator, I was part of a team of six people' +
 				' where we coordinated the DSE Messe Lyngby 2023, the largest job and career fair for engineering students' +

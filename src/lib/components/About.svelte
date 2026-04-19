@@ -9,8 +9,8 @@
 	<div class="flex max-w-4xl flex-col items-start px-1 sm:px-3">
 		<h5 class="w-full text-center font-medium">About me</h5>
 		<p>
-			Hi there, my name is Marcus, and I'm a {age}-year-old Security Analyst currently working in
-			Cybersecurity while living in Copenhagen, Denmark. I'm also currently pursuing an
+			My name is Marcus (although I usually go by Hero), and I'm a {age}-year-old Cybersecurity
+			professional living in Copenhagen, Denmark. I'm also currently pursuing an
 			<a href="https://www.en.aau.dk/education/master/cyber-security" rel="_blank"
 				>MSc in Cyber Security</a
 			>

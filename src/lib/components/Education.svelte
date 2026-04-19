@@ -30,7 +30,7 @@
 		{
 			start_date: new Date('2023-08-01'),
 			end_date: new Date('2024-01-01'),
-			school: 'The Hong Kong University of Science and Technology',
+			school: 'HKUST - The Hong Kong University of Science and Technology',
 			degree: 'Bachelor of Engineering - BEng: Software Technology',
 			description:
 				"Exchange Studies as a part of my bachelor's at the Technical University of Denmark. " +
