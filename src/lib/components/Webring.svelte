@@ -22,6 +22,7 @@
 				title={badge.name}
 			>
 				<img
+					class="pixelated"
 					src={badge.image}
 					alt={'Badge for ' + badge.name}
 					width="88"
@@ -32,3 +33,9 @@
 		{/each}
 	</div>
 </section>
+
+<style>
+	.pixelated {
+		image-rendering: pixelated;
+	}
+</style>
