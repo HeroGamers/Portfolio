@@ -3,6 +3,7 @@
 	import About from '$lib/components/About.svelte';
 	import Experience from '$lib/components/Experience.svelte';
 	import Education from '$lib/components/Education.svelte';
+	import Certificates from '$lib/components/Certificates.svelte';
 	import Portfolio from '$lib/components/Portfolio.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 </script>
@@ -16,6 +17,7 @@
 		<Experience />
 		<Education />
 	</div>
+	<Certificates />
 	<Portfolio />
 	<Contact />
 </div>
