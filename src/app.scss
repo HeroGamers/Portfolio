@@ -160,28 +160,6 @@ h6 {
 		cursor: pointer;
 		text-decoration: none;
 	}
-
-	.card-expansion {
-		overflow: hidden;
-		transition: max-height 1s ease;
-	}
-
-	&[aria-expanded='true'] {
-		.card-expansion {
-			// if content in a card takes up more space than 50vh then welp
-			max-height: 58vh;
-		}
-
-		.dropdown {
-			--tw-rotate: 0deg;
-		}
-	}
-
-	&[aria-expanded='false'] {
-		.card-expansion {
-			max-height: 0;
-		}
-	}
 }
 
 .svg-icon {

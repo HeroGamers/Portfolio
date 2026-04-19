@@ -3,7 +3,7 @@
 
 	const prefix = 'Hello, ';
 	const original = 'Hello, World!';
-	const replacement = "I'm Marcus!";
+	const replacement = "I'm Hero!";
 
 	let displayText = original;
 
@@ -27,7 +27,7 @@
 			t += stepMs;
 		}
 
-		// Type "I'm Marcus!"
+		// Replace with introducing text
 		for (let i = 1; i <= replacement.length; i++) {
 			queue(() => {
 				displayText = prefix + replacement.slice(0, i);

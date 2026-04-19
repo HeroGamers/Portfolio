@@ -1,5 +1,5 @@
 <script>
-	import DropDownIcon from '$lib/images/ChevronDownSolidSVG.svelte';
+	import ExpandableCard from '$lib/components/ExpandableCard.svelte';
 
 	/** @type String */
 	export let company = 'Company Name';
@@ -14,21 +14,6 @@
 			employment_type: 'Full-time'
 		}
 	];
-
-	/** @type boolean */
-	let expanded = false;
-
-	/**
-	 * @param {MouseEvent | KeyboardEvent} event
-	 */
-	const toggleExpansion = (event) => {
-		// If the event is a keyboard event, check if the key is not "Enter" or " ", to prevent Tab from toggling the expansion
-		if (event instanceof KeyboardEvent && event.key !== 'Enter' && event.key !== ' ') {
-			return;
-		}
-
-		expanded = !expanded;
-	};
 
 	// Get the "newest" end date and the oldest start date for the entire company,
 	// and check if employment types are equal
@@ -76,54 +61,37 @@
 	});
 
 	import { durationInHalfYears, formatDate } from '$lib/utils.js';
+
+	const getDateText = () => {
+		const startText = oldest_start_date != null ? formatDate(oldest_start_date) : 'Unknown';
+		const endText = newest_end_date != null ? formatDate(newest_end_date) : 'Present';
+		const durationText =
+			oldest_start_date != null && newest_end_date != null
+				? ' (' + durationInHalfYears(oldest_start_date, newest_end_date) + ' years)'
+				: '';
+
+		return startText + ' to ' + endText + durationText;
+	};
 </script>
 
-<div class="flex flex-col">
-	<p class="hasDate pb-2">
-		{oldest_start_date != null ? formatDate(oldest_start_date) : 'Unknown'} to {newest_end_date !=
-		null
-			? formatDate(newest_end_date)
-			: 'Present'}{oldest_start_date != null && newest_end_date != null
-			? ' (' + durationInHalfYears(oldest_start_date, newest_end_date) + ' years)'
-			: ''}
-	</p>
-	<div
-		class="card relative ml-1 flex flex-col sm:ml-3"
-		on:click={toggleExpansion}
-		on:keydown={toggleExpansion}
-		aria-expanded={expanded}
-		role="button"
-		tabindex="0"
-	>
-		<div class="flex flex-row justify-between gap-2">
-			<div class="flex max-w-[95%] flex-col">
-				<p class="font-semibold">
-					{company}
-					{#if employmentType !== null}
-						&bull; {employmentType}
-					{/if}
-				</p>
-				{#each functions as func_at_company, index (index)}
-					<p class="hasDate font-medium tracking-normal normal-case">
-						- {func_at_company.title} ({formatDate(func_at_company.start_date)} to {func_at_company.end_date !=
-						null
-							? formatDate(func_at_company.end_date)
-							: 'Present'})
-					</p>
-					{#if employmentType === null}
-						<p class="pl-2 font-light text-zinc-300">- {func_at_company.employment_type}</p>
-					{/if}
-				{/each}
-			</div>
-			<!-- absolute top-4 right-4 rotate-90 transition-transform h-7 w-7 dropdown -->
-			<div class="dropdown mt-0.5 ml-3 h-7 w-7 rotate-90 transition-transform duration-300">
-				<DropDownIcon />
-			</div>
-		</div>
-		<div>
-			{#if description != null}
-				<p class="card-expansion pt-2">{description}</p>
+<ExpandableCard dateText={getDateText()} {description}>
+	<div slot="summary">
+		<p class="font-semibold">
+			{company}
+			{#if employmentType !== null}
+				&bull; {employmentType}
 			{/if}
-		</div>
+		</p>
+		{#each functions as func_at_company, index (index)}
+			<p class="hasDate font-medium tracking-normal normal-case">
+				- {func_at_company.title} ({formatDate(func_at_company.start_date)} to {func_at_company.end_date !=
+				null
+					? formatDate(func_at_company.end_date)
+					: 'Present'})
+			</p>
+			{#if employmentType === null}
+				<p class="pl-2 font-light text-zinc-300">- {func_at_company.employment_type}</p>
+			{/if}
+		{/each}
 	</div>
-</div>
+</ExpandableCard>
