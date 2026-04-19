@@ -6,6 +6,7 @@
 	import Certificates from '$lib/components/Certificates.svelte';
 	import Portfolio from '$lib/components/Portfolio.svelte';
 	import Contact from '$lib/components/Contact.svelte';
+	import Webring from '$lib/components/Webring.svelte';
 </script>
 
 <div
@@ -20,6 +21,7 @@
 	<Certificates />
 	<Portfolio />
 	<Contact />
+	<Webring />
 </div>
 
 <style lang="scss">
