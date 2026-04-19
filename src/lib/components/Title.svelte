@@ -40,11 +40,22 @@
 </script>
 
 <section id="home" class="flex w-full flex-col">
-	<h1 class="typing text-center" id="hello-world">{displayText}</h1>
-	<h4 class="text-center">Currently pursuing an MSc in Cyber Security</h4>
+	<h1 class="typing text-center font-semibold" id="hello-world">{displayText}</h1>
+	<h4 class="text-center font-light text-zinc-300">Currently pursuing an MSc in Cyber Security</h4>
 </section>
 
 <style>
+	h1 {
+		background: linear-gradient(
+			90deg,
+			rgba(250, 250, 250, 0.98) 0%,
+			rgba(213, 188, 232, 0.94) 100%
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+
 	.typing::after {
 		content: '|';
 		margin-left: 0.08em;

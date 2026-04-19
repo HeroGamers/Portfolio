@@ -1,35 +1,33 @@
 <script>
 	import { page } from '$app/state';
+	import BlogHeader from '$lib/components/BlogHeader.svelte';
 
-	/** @type String */
-	const description = 'Place for infodumping :)';
-
-	/**
-	 * For holding the title of the current page, to use in various places.
-	 * @type String
-	 * */
-	let page_title = 'Blog';
+	const description =
+		'Writeups, explorations, and infodumps about cybersecurity and CTF competitions.';
+	const page_title = 'Blog';
 </script>
 
 <svelte:head>
 	<title>Hero - {page_title}</title>
-	<!-- Basic Metadata-->
 	<meta name="description" content={description} />
-	<!-- Facebook Metadata-->
 	<meta property="og:url" content={page.url.href} />
 	<meta property="og:title" content={page_title} />
 	<meta property="og:description" content={description} />
-	<!-- Twitter Metadata-->
 	<meta property="twitter:url" content={page.url.href} />
 	<meta property="twitter:title" content={page_title} />
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<div class="flex flex-col items-start overflow-x-hidden md:mt-8 md:ml-5">
-	<h1>Welcome to My Blog</h1>
-
-	<h2>Topics</h2>
-	<ul class="ml-5 list-disc">
-		<li><a href="/blog/topics/ctf">CTFs</a></li>
-	</ul>
-</div>
+<BlogHeader title="Blog" {description} id="blog">
+	<div class="w-full">
+		<h5 class="mb-4">Topics</h5>
+		<div class="flex w-full flex-col gap-3">
+			<a href="/blog/topics/ctf" class="card group flex w-full flex-col p-4 sm:p-5">
+				<h4 class="font-semibold transition-colors group-hover:text-purple-300">CTF Writeups</h4>
+				<p class="mt-1 text-sm text-zinc-400">
+					Solutions and writeups from Capture The Flag competitions
+				</p>
+			</a>
+		</div>
+	</div>
+</BlogHeader>

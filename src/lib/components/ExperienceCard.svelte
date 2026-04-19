@@ -88,35 +88,35 @@
 			: ''}
 	</p>
 	<div
-		class="card relative ml-2 flex flex-col p-2 sm:ml-4"
+		class="card relative ml-1 flex flex-col sm:ml-3"
 		on:click={toggleExpansion}
 		on:keydown={toggleExpansion}
 		aria-expanded={expanded}
 		role="button"
 		tabindex="0"
 	>
-		<div class="flex flex-row justify-between">
+		<div class="flex flex-row justify-between gap-2">
 			<div class="flex max-w-[95%] flex-col">
-				<p class="font-bold">
+				<p class="font-semibold">
 					{company}
 					{#if employmentType !== null}
 						&bull; {employmentType}
 					{/if}
 				</p>
 				{#each functions as func_at_company, index (index)}
-					<p class="hasDate font-medium">
+					<p class="hasDate font-medium tracking-normal normal-case">
 						- {func_at_company.title} ({formatDate(func_at_company.start_date)} to {func_at_company.end_date !=
 						null
 							? formatDate(func_at_company.end_date)
 							: 'Present'})
 					</p>
 					{#if employmentType === null}
-						<p class="pl-2 font-light">- {func_at_company.employment_type}</p>
+						<p class="pl-2 font-light text-zinc-300">- {func_at_company.employment_type}</p>
 					{/if}
 				{/each}
 			</div>
 			<!-- absolute top-4 right-4 rotate-90 transition-transform h-7 w-7 dropdown -->
-			<div class="dropdown ml-3 h-7 w-7 rotate-90 transition-transform">
+			<div class="dropdown mt-0.5 ml-3 h-7 w-7 rotate-90 transition-transform duration-300">
 				<DropDownIcon />
 			</div>
 		</div>

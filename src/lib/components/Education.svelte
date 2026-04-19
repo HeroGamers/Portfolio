@@ -43,18 +43,11 @@
 	];
 </script>
 
-<section id="education" class="flex w-full max-w-5xl flex-col items-start pt-10">
+<section id="education" class="flex w-full max-w-3xl flex-col items-start xl:max-w-[48%]">
 	<h5 class="font-medium">Education</h5>
-	<div class="flex w-full flex-col space-y-3 px-2 sm:px-6">
+	<div class="flex w-full flex-col space-y-3 px-1 sm:px-4">
 		{#each educations as education (education.school)}
 			<EducationCard {...education} />
 		{/each}
 	</div>
 </section>
-
-<style lang="scss">
-	section > div {
-		border-left-width: 2px;
-		border-left-color: $color-bg-top;
-	}
-</style>

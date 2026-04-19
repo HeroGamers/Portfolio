@@ -46,11 +46,13 @@
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<div class="flex min-h-screen flex-col transition-colors md:flex-row">
+<div class="flex min-h-screen flex-col transition-colors md:flex-row-reverse">
 	<Header />
 
 	<div class="relative flex flex-1 flex-col">
-		<main class="box-border flex h-full w-full flex-1 flex-col p-4">
+		<main
+			class="box-border flex h-full w-full flex-1 flex-col px-4 pt-4 pb-6 sm:px-6 md:px-10 md:pt-6 md:pb-10"
+		>
 			<!-- <slot /> -->
 			{@render children()}
 		</main>
