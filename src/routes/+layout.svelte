@@ -9,6 +9,16 @@
 	import '@fontsource/roboto';
 	import '@fontsource-variable/open-sans';
 
+	/** @type String */
+	const description =
+		'Welcome to the place where I ramble about the world of cybersecurity and software development!';
+
+	/**
+	 * For holding the title of the current page, to use in various places.
+	 * @type String
+	 * */
+	let page_title = 'Hero - Cybersecurity Enthusiast';
+
 	/**
 	 * @type {import('./$types').LayoutProps}
 	 */
@@ -17,9 +27,9 @@
 
 <svelte:head>
 	<!-- Default title (can be overridden in pages) -->
-	<title>Hero - Portfolio</title>
+	<title>{page_title}</title>
 	<!-- Basic Metadata (shared across pages) -->
-	<meta name="description" content="My journey through cyberspace :)" />
+	<meta name="description" content={description} />
 	<meta name="keywords" content="HeroGamers, Marcus Sand, Portfolio, Website, Personal Website" />
 	<meta name="author" content="Marcus Sand" />
 	<meta name="application-name" content="Hero" />
@@ -28,12 +38,12 @@
 	<!-- Facebook Metadata (base/defaults) -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={page.url.href} />
-	<meta property="og:title" content="Hero - Portfolio" />
-	<meta property="og:description" content="My journey through cyberspace :)" />
+	<meta property="og:title" content={page_title} />
+	<meta property="og:description" content={description} />
 	<!-- Twitter Metadata (base/defaults) -->
 	<meta property="twitter:url" content={page.url.href} />
-	<meta property="twitter:title" content="Hero - Portfolio" />
-	<meta property="twitter:description" content="My journey through cyberspace :)" />
+	<meta property="twitter:title" content={page_title} />
+	<meta property="twitter:description" content={description} />
 </svelte:head>
 
 <div class="flex min-h-screen flex-col transition-colors md:flex-row">

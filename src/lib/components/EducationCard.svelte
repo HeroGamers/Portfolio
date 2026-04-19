@@ -27,14 +27,16 @@
 		expanded = !expanded;
 	};
 
-	import { formatDate } from '$lib/utils.js';
+	import { durationInHalfYears, formatDate } from '$lib/utils.js';
 </script>
 
 <div class="flex flex-col">
 	<p class="hasDate pb-2">
 		{start_date != null ? formatDate(start_date) : 'Unknown'} to {end_date != null
 			? formatDate(end_date)
-			: 'Present'}
+			: 'Present'}{start_date != null && end_date != null
+			? ' (' + durationInHalfYears(start_date, end_date) + ' years)'
+			: ''}
 	</p>
 	<div
 		class="card relative ml-2 flex flex-col p-2 sm:ml-4"

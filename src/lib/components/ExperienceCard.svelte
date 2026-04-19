@@ -75,7 +75,7 @@
 		}
 	});
 
-	import { formatDate } from '$lib/utils.js';
+	import { durationInHalfYears, formatDate } from '$lib/utils.js';
 </script>
 
 <div class="flex flex-col">
@@ -83,7 +83,9 @@
 		{oldest_start_date != null ? formatDate(oldest_start_date) : 'Unknown'} to {newest_end_date !=
 		null
 			? formatDate(newest_end_date)
-			: 'Present'}
+			: 'Present'}{oldest_start_date != null && newest_end_date != null
+			? ' (' + durationInHalfYears(oldest_start_date, newest_end_date) + ' years)'
+			: ''}
 	</p>
 	<div
 		class="card relative ml-2 flex flex-col p-2 sm:ml-4"

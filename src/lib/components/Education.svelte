@@ -4,8 +4,19 @@
 	/** @type {Array.<{start_date: Date, end_date: Date | null, school: String, degree: String, description: String | null}>} */
 	let educations = [
 		{
-			start_date: new Date('2021-08-01'),
+			start_date: new Date('2025-09-01'),
 			end_date: null,
+			school: 'AAU - Aalborg University',
+			degree: 'Master of Science - MSc: Cyber Security',
+			description:
+				'I have specialized myself in the field of cyber security, and have gained a deeper understanding of the various aspects of cyber security, ' +
+				'including network security, cryptography, and cyber security management. ' +
+				'I have also gained practical experience in the field through various semester projects, ' +
+				'which have given me a strong foundation in the field of cyber security.'
+		},
+		{
+			start_date: new Date('2021-08-01'),
+			end_date: new Date('2025-02-05'),
 			school: 'DTU - Technical University of Denmark',
 			degree: 'Bachelor of Engineering - BEng: Software Technology',
 			description:
@@ -28,26 +39,6 @@
 				'I have also gained experience in working with people from different cultures ' +
 				'and backgrounds, which has given me a broader perspective on the world and how to work with people from ' +
 				'different backgrounds.'
-		},
-		{
-			start_date: new Date('2018-08-01'),
-			end_date: new Date('2021-06-30'),
-			school: 'HTX Næstved',
-			degree: 'Higher Technical Examination Programme',
-			description:
-				'This is an Upper Secondary Education in Denmark, and my line of study was Computer Science. ' +
-				'I developed skills in computer science, digital design, and development, including designing and programming' +
-				' a voice-controlled robot with AI in my third-year technical subject. As part of the mandatory Study Area ' +
-				'Project (SOP), I also developed an AI for chat moderation using TensorFlow Keras in Python. The AI was able ' +
-				'to assess whether chat messages had a good or bad intention (toxicity), which could be used to help ' +
-				'moderators on various chat forums.'
-		},
-		{
-			start_date: new Date('2008-08-01'),
-			end_date: new Date('2018-06-30'),
-			school: 'Lille Næstved Skole',
-			degree: 'The Danish Folkeskole',
-			description: 'This is the Primary and Lower Secondary Education in Denmark.'
 		}
 	];
 </script>
