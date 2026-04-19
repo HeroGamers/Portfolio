@@ -13,11 +13,11 @@
 	import { formatDate } from '$lib/utils.js';
 </script>
 
-<div class="mx-3 flex w-full flex-col p-2 xl:mx-0 xl:w-1/2">
+<div class="mx-1 flex w-full flex-col p-2 xl:mx-0 xl:w-1/2">
 	<a class="card flex flex-col" href={link} target="_blank" title={project_name}>
-		<p class="font-bold">{project_name}</p>
+		<p class="font-semibold">{project_name}</p>
 		{#if description != null}
-			<p class="pt-2">{description}</p>
+			<p class="pt-2 text-zinc-200">{description}</p>
 		{/if}
 		<p class="hasDate pt-2 font-light">{programming_language} &bull; {formatDate(date)}</p>
 	</a>

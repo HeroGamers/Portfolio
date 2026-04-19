@@ -31,9 +31,9 @@
 	];
 </script>
 
-<section id="portfolio" class="flex w-full flex-col items-start pt-10">
+<section id="portfolio" class="flex w-full flex-col items-start">
 	<h5 class="font-medium">Portfolio</h5>
-	<div class="portfolio-cards flex w-full flex-col justify-center pr-2">
+	<div class="portfolio-cards flex w-full flex-col justify-center pr-1 sm:pr-2">
 		{#each portfolioEntries as portfolioEntry (portfolioEntry.project_name)}
 			<PortfolioCard {...portfolioEntry} />
 		{/each}
@@ -43,10 +43,5 @@
 <style lang="scss">
 	.portfolio-cards {
 		flex-flow: row wrap;
-	}
-
-	section > div {
-		border-left-width: 2px;
-		border-left-color: $color-bg-top;
 	}
 </style>

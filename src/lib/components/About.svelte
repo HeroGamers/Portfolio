@@ -5,8 +5,8 @@
 	const age = Math.abs(ageDate.getUTCFullYear() - 1970);
 </script>
 
-<section id="about" class="flex w-full flex-col items-center pt-10">
-	<div class="flex max-w-5xl flex-col items-start">
+<section id="about" class="flex w-full flex-col items-center">
+	<div class="flex max-w-4xl flex-col items-start px-1 sm:px-3">
 		<h5 class="w-full text-center font-medium">About me</h5>
 		<p>
 			Hi there, my name is Marcus, and I'm a {age}-year-old Security Analyst currently working in
