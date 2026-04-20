@@ -1,5 +1,6 @@
 <script>
 	import EducationCard from '$lib/components/EducationCard.svelte';
+	import { fly } from 'svelte/transition';
 
 	/** @type {Array.<{start_date: Date, end_date: Date | null, school: String, degree: String, description: String | null}>} */
 	let educations = [
@@ -43,7 +44,11 @@
 	];
 </script>
 
-<section id="education" class="flex w-full max-w-3xl flex-col items-start xl:max-w-[48%]">
+<section
+	id="education"
+	class="flex w-full max-w-3xl flex-col items-start xl:max-w-[48%]"
+	in:fly={{ y: 12, duration: 700 }}
+>
 	<h5 class="font-medium">Education</h5>
 	<div class="flex w-full flex-col space-y-3 px-1 sm:px-4">
 		{#each educations as education (education.school)}

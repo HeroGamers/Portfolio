@@ -1,5 +1,6 @@
 <script>
 	import ExperienceCard from '$lib/components/ExperienceCard.svelte';
+	import { fly } from 'svelte/transition';
 
 	/** @type Array<{company: String, description: String, functions: Array<{start_date: Date, end_date: Date | null, title: String, employment_type: String}>}> */
 	let experiences = [
@@ -89,7 +90,11 @@
 	];
 </script>
 
-<section id="experience" class="flex w-full max-w-3xl flex-col items-start xl:max-w-[48%]">
+<section
+	id="experience"
+	class="flex w-full max-w-3xl flex-col items-start xl:max-w-[48%]"
+	in:fly={{ y: 12, duration: 700 }}
+>
 	<h5 class="font-medium">Experience</h5>
 	<div class="flex w-full flex-col space-y-3 px-1 sm:px-4">
 		{#each experiences as experience (experience.company)}

@@ -1,5 +1,6 @@
 <script>
 	import CertificateCard from '$lib/components/CertificateCard.svelte';
+	import { fly } from 'svelte/transition';
 
 	/** @type {Array<{name: string, issuer: string, issue_date: Date | null, expiry_date: Date | null, credential_id: string | null, link: string | null, description: string | null}>} */
 	let certificates = [
@@ -26,7 +27,11 @@
 	];
 </script>
 
-<section id="certificates" class="flex w-full flex-col items-start">
+<section
+	id="certificates"
+	class="flex w-full flex-col items-start"
+	in:fly={{ y: 12, duration: 700 }}
+>
 	<h5 class="font-medium">Certificates</h5>
 	<div class="flex w-full flex-col space-y-3 px-1 sm:px-4">
 		{#each certificates as certificate (certificate.name)}
