@@ -177,7 +177,7 @@
 		</div>
 
 		<nav
-			class="flex w-full flex-col items-center justify-end sm:flex-row md:justify-center"
+			class="flex w-full flex-col items-center justify-start sm:flex-row sm:justify-end md:justify-center"
 			class:expanded={burgerMenuExpanded}
 		>
 			<ul
@@ -257,7 +257,8 @@
 
 			&.expanded {
 				display: flex;
-				max-height: 30vh;
+				max-height: 25rem;
+				overflow-y: auto;
 			}
 		}
 
