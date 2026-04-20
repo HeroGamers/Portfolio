@@ -1,4 +1,8 @@
-<section id="contact" class="flex w-full flex-col items-center">
+<script>
+	import { fly } from 'svelte/transition';
+</script>
+
+<section id="contact" class="flex w-full flex-col items-center" in:fly={{ y: 12, duration: 700 }}>
 	<div class="contact-container flex w-full max-w-3xl flex-col items-center px-1 sm:px-3">
 		<h5 class="w-full text-center font-medium">Contact</h5>
 		<div class="mt-2 flex w-full flex-col items-center gap-2">

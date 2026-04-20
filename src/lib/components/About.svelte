@@ -1,11 +1,12 @@
 <script>
+	import { fly } from 'svelte/transition';
 	const birthdate = new Date('2002-03-26');
 	// kudos to https://stackoverflow.com/a/24181701/12418245
 	const ageDate = new Date(Date.now() - birthdate.getTime());
 	const age = Math.abs(ageDate.getUTCFullYear() - 1970);
 </script>
 
-<section id="about" class="flex w-full flex-col items-center">
+<section id="about" class="flex w-full flex-col items-center" in:fly={{ y: 12, duration: 700 }}>
 	<div class="flex max-w-4xl flex-col items-start px-1 sm:px-3">
 		<h5 class="w-full text-center font-medium">About me</h5>
 		<p>

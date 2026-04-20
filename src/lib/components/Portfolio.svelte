@@ -1,5 +1,6 @@
 <script>
 	import PortfolioCard from '$lib/components/PortfolioCard.svelte';
+	import { fly } from 'svelte/transition';
 
 	/** @type {Array.<{date: Date, project_name: String, programming_language: String, link: String, description: String}>} */
 	let portfolioEntries = [
@@ -31,7 +32,7 @@
 	];
 </script>
 
-<section id="portfolio" class="flex w-full flex-col items-start">
+<section id="portfolio" class="flex w-full flex-col items-start" in:fly={{ y: 12, duration: 700 }}>
 	<h5 class="font-medium">Portfolio</h5>
 	<div class="portfolio-cards flex w-full flex-col justify-center pr-1 sm:pr-2">
 		{#each portfolioEntries as portfolioEntry (portfolioEntry.project_name)}

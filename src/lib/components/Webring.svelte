@@ -1,4 +1,5 @@
 <script>
+	import { fly } from 'svelte/transition';
 	/** @type {Array<{name: string, href: string, image: string}>} */
 	export let badges = [
 		{
@@ -38,7 +39,11 @@
 	];
 </script>
 
-<section id="friends-badges" class="flex w-full flex-col items-start">
+<section
+	id="friends-badges"
+	class="flex w-full flex-col items-start"
+	in:fly={{ y: 12, duration: 700 }}
+>
 	<h5 class="font-medium">Webring</h5>
 
 	<div class="flex w-full flex-wrap gap-3 px-1 sm:px-4">

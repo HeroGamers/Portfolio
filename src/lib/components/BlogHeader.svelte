@@ -1,4 +1,5 @@
 <script>
+	import { fly } from 'svelte/transition';
 	/** @type {string | null} [backLink] - Optional link to go back to */
 	export let backLink = null;
 	/** @type {string | null} [backText] */
@@ -11,7 +12,7 @@
 	export let id = null;
 </script>
 
-<section class="flex w-full flex-col items-start pt-0" {id}>
+<section class="flex w-full flex-col items-start pt-0" {id} in:fly={{ y: 12, duration: 700 }}>
 	{#if backLink && backText}
 		<a
 			href={backLink}

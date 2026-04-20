@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 
 	const prefix = 'Hello, ';
 	const original = 'Hello, World!';
@@ -39,7 +40,7 @@
 	});
 </script>
 
-<section id="home" class="flex w-full flex-col">
+<section id="home" class="flex w-full flex-col" in:fly={{ y: 12, duration: 700 }}>
 	<h1 class="typing text-center font-semibold" id="hello-world">{displayText}</h1>
 	<h4 class="text-center font-light text-zinc-300">Currently pursuing an MSc in Cyber Security</h4>
 </section>
