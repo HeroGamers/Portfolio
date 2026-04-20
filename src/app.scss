@@ -39,15 +39,25 @@ html {
 
 body {
 	min-height: 100vh;
+	min-height: 100dvh;
 	margin: 0;
-	background-attachment: fixed;
 	background-color: $color-bg-1;
-	background-size: 100vw 100vh;
 	overflow-x: hidden;
-	background-image:
-		radial-gradient(circle at 16% 14%, rgba(111, 60, 151, 0.24) 0, rgba(111, 60, 151, 0) 40%),
-		radial-gradient(circle at 80% 8%, rgba(111, 60, 151, 0.17) 0, rgba(111, 60, 151, 0) 32%),
-		linear-gradient(135deg, $color-bg-0 0%, $color-bg-1 42%, $color-bg-2 100%);
+
+	&::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: -1;
+		pointer-events: none;
+		background-image:
+			radial-gradient(circle at 16% 14%, rgba(111, 60, 151, 0.24) 0, rgba(111, 60, 151, 0) 40%),
+			radial-gradient(circle at 80% 8%, rgba(111, 60, 151, 0.17) 0, rgba(111, 60, 151, 0) 32%),
+			linear-gradient(135deg, $color-bg-0 0%, $color-bg-1 42%, $color-bg-2 100%);
+	}
 }
 
 // main {
@@ -139,7 +149,6 @@ h6 {
 }
 
 .card {
-	width: 100%;
 	padding: 1rem 1.1rem;
 	margin: 0.6rem;
 	border-width: 1px;
