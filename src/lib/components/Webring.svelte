@@ -6,6 +6,11 @@
 			name: 'Hero',
 			href: 'https://herogamers.dev',
 			image: '/badges/hero.png'
+		},
+		{
+			name: 'Ivy (hexadecimalDinosaur)',
+			href: 'https://hexadecimaldinosaur.com',
+			image: '/badges/hexadecimaldinosaur.gif'
 		}
 	];
 
