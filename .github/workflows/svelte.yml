@@ -22,7 +22,7 @@ jobs:
         # even-numbered version are LTS, odd-numbered versions are Current
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6
