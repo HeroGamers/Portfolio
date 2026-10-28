@@ -1,24 +1,11 @@
 <script>
-	import { page } from '$app/state';
 	import BlogHeader from '#lib/components/BlogHeader.svelte';
 
-	const description =
-		'Writeups, explorations, and infodumps about cybersecurity and CTF competitions.';
-	const page_title = 'Blog';
+	/** @type {import('./$types').PageProps} */
+	let { data } = $props();
 </script>
 
-<svelte:head>
-	<title>Hero - {page_title}</title>
-	<meta name="description" content={description} />
-	<meta property="og:url" content={page.url.href} />
-	<meta property="og:title" content={page_title} />
-	<meta property="og:description" content={description} />
-	<meta property="twitter:url" content={page.url.href} />
-	<meta property="twitter:title" content={page_title} />
-	<meta property="twitter:description" content={description} />
-</svelte:head>
-
-<BlogHeader title="Blog" {description} id="blog">
+<BlogHeader title="Blog" description={data.description} id="blog">
 	<div class="w-full">
 		<h5 class="mb-4">Topics</h5>
 		<div class="flex w-full flex-col gap-3">

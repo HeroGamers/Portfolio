@@ -39,3 +39,27 @@ test('Valid dates', async ({ page }) => {
 		// this cannot check for 'carryover' months
 	}
 });
+
+test('Title updates on client-side navigation', async ({ page }) => {
+	await page.goto('/');
+	await expect(page).toHaveTitle('Hero - Cybersecurity Enthusiast');
+
+	await page.getByRole('link', { name: 'Blog' }).first().click();
+	await expect(page).toHaveTitle('Hero - Blog');
+
+	await page.goBack();
+	await expect(page).toHaveTitle('Hero - Cybersecurity Enthusiast');
+
+	await page.goto('/blog');
+	await page.getByRole('link', { name: 'Home' }).first().click();
+	await expect(page).toHaveTitle('Hero - Cybersecurity Enthusiast');
+});
+
+test('Blog pages have a single description', async ({ page }) => {
+	await page.goto('/blog');
+	await expect(page.locator('meta[name="description"]')).toHaveCount(1);
+	await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+		'content',
+		'Writeups, explorations, and infodumps about cybersecurity and CTF competitions.'
+	);
+});

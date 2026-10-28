@@ -9,24 +9,22 @@
 	import '@fontsource/roboto';
 	import '@fontsource-variable/open-sans';
 
-	/** @type String */
-	const description =
-		'Welcome to the place where I ramble about the world of cybersecurity and software development!';
-
-	/**
-	 * For holding the title of the current page, to use in various places.
-	 * @type String
-	 * */
-	let page_title = 'Hero - Cybersecurity Enthusiast';
-
 	/**
 	 * @type {import('./$types').LayoutProps}
 	 */
 	let { children } = $props();
+
+	// Pages can set `title` and `description` from their load function
+	const page_title = $derived(
+		page.data.title ? `Hero - ${page.data.title}` : 'Hero - Cybersecurity Enthusiast'
+	);
+	const description = $derived(
+		page.data.description ??
+			'Welcome to the place where I ramble about the world of cybersecurity and software development!'
+	);
 </script>
 
 <svelte:head>
-	<!-- Default title (can be overridden in pages) -->
 	<title>{page_title}</title>
 	<!-- Basic Metadata (shared across pages) -->
 	<meta name="description" content={description} />
@@ -35,12 +33,12 @@
 	<meta name="application-name" content="Hero" />
 	<meta name="msapplication-TileColor" content="#6F3C97" />
 
-	<!-- Facebook Metadata (base/defaults) -->
+	<!-- Facebook Metadata -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={page.url.href} />
 	<meta property="og:title" content={page_title} />
 	<meta property="og:description" content={description} />
-	<!-- Twitter Metadata (base/defaults) -->
+	<!-- Twitter Metadata -->
 	<meta property="twitter:url" content={page.url.href} />
 	<meta property="twitter:title" content={page_title} />
 	<meta property="twitter:description" content={description} />

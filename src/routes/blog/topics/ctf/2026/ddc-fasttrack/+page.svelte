@@ -4,20 +4,7 @@
 
 	import youveGotMail2 from './youve-got-mail-2.md?raw';
 	import windowsForensicsHell from './windows-forensics-hell.md?raw';
-
-	const description =
-		'Challenge writeups and solutions from the DDC FastTrack 2026 CTF competition.';
-	const page_title = 'Blog - CTFs - DDC FastTrack 2026';
 </script>
-
-<svelte:head>
-	<title>Hero - {page_title}</title>
-	<meta name="description" content={description} />
-	<meta property="og:title" content={page_title} />
-	<meta property="og:description" content={description} />
-	<meta property="twitter:title" content={page_title} />
-	<meta property="twitter:description" content={description} />
-</svelte:head>
 
 <BlogHeader
 	title="DDC FastTrack 2026"

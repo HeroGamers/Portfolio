@@ -1,22 +1,13 @@
 <script>
 	import BlogHeader from '#lib/components/BlogHeader.svelte';
 
-	const description = 'Solutions and writeups from various Capture The Flag competitions.';
-	const page_title = 'Blog - CTFs';
+	/** @type {import('./$types').PageProps} */
+	let { data } = $props();
 </script>
-
-<svelte:head>
-	<title>Hero - {page_title}</title>
-	<meta name="description" content={description} />
-	<meta property="og:title" content={page_title} />
-	<meta property="og:description" content={description} />
-	<meta property="twitter:title" content={page_title} />
-	<meta property="twitter:description" content={description} />
-</svelte:head>
 
 <BlogHeader
 	title="CTF Writeups"
-	{description}
+	description={data.description}
 	backLink="/blog"
 	backText="Back to Blog"
 	id="ctf-blog"
