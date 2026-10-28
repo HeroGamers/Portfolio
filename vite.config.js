@@ -2,9 +2,20 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import adapter from '@sveltejs/adapter-cloudflare';
 import { defineConfig } from 'vitest/config';
+import { parse } from 'yaml';
 
 export default defineConfig({
 	plugins: [
+		// Import .yaml files as plain data, parsed at build time
+		{
+			name: 'yaml',
+			transform: {
+				filter: { id: /\.ya?ml$/ },
+				handler(code) {
+					return { code: `export default ${JSON.stringify(parse(code))};`, map: null };
+				}
+			}
+		},
 		sveltekit({
 			// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 			adapter: adapter({

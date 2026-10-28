@@ -1,47 +1,7 @@
 <script>
 	import EducationCard from '#lib/components/EducationCard.svelte';
 	import { fly } from 'svelte/transition';
-
-	/** @type {Array.<{start_date: Date, end_date: Date | null, school: String, degree: String, description: String | null}>} */
-	let educations = [
-		{
-			start_date: new Date('2025-09-01'),
-			end_date: null,
-			school: 'AAU - Aalborg University',
-			degree: 'Master of Science - MSc: Cyber Security',
-			description:
-				'I have specialized myself in the field of cyber security, and have gained a deeper understanding of the various aspects of cyber security, ' +
-				'including network security, cryptography, and cyber security management. ' +
-				'I have also gained practical experience in the field through various semester projects, ' +
-				'which have given me a strong foundation in the field of cyber security.'
-		},
-		{
-			start_date: new Date('2021-08-01'),
-			end_date: new Date('2025-02-05'),
-			school: 'DTU - Technical University of Denmark',
-			degree: 'Bachelor of Engineering - BEng: Software Technology',
-			description:
-				'I have developed a strong ability to analyze problems, design solutions, and implement them in ' +
-				'practice. My education in software technology has given me a deep understanding in a wide range of topics ' +
-				'such as software processes, principles of data communication, and network security. I have also gained ' +
-				'practical experience with agile development methods like SCRUM and project management tools, which have ' +
-				'provided me with an efficient approach to project management and organization, ensuring the development of ' +
-				'high-quality solutions.'
-		},
-		{
-			start_date: new Date('2023-08-01'),
-			end_date: new Date('2024-01-01'),
-			school: 'HKUST - The Hong Kong University of Science and Technology',
-			degree: 'Bachelor of Engineering - BEng: Software Technology',
-			description:
-				"Exchange Studies as a part of my bachelor's at the Technical University of Denmark. " +
-				'I got to take several courses in Cyber Security, and gain experience in a different culture, and ' +
-				'to learn about the differences in the educational system between Denmark and Hong Kong. ' +
-				'I have also gained experience in working with people from different cultures ' +
-				'and backgrounds, which has given me a broader perspective on the world and how to work with people from ' +
-				'different backgrounds.'
-		}
-	];
+	import { educations } from '#lib/resume.js';
 </script>
 
 <section
