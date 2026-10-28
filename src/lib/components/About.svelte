@@ -6,9 +6,9 @@
 	const age = Math.abs(ageDate.getUTCFullYear() - 1970);
 </script>
 
-<section id="about" class="flex w-full flex-col items-center" in:fly={{ y: 12, duration: 700 }}>
-	<div class="flex max-w-4xl flex-col items-start px-1 sm:px-3">
-		<h5 class="w-full text-center font-medium">About me</h5>
+<section id="about" class="flex w-full flex-col items-start" in:fly={{ y: 12, duration: 700 }}>
+	<h5 class="font-medium">About me</h5>
+	<div class="flex flex-col items-start px-1 sm:px-4">
 		<p>
 			My name is Marcus (although I usually go by Hero), and I'm a {age}-year-old Cybersecurity
 			professional living in Copenhagen, Denmark. I'm also currently pursuing an

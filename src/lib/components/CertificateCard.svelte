@@ -40,12 +40,12 @@
 <ExpandableCard dateText={getDateText()} {description}>
 	<div slot="summary" class="flex flex-col gap-1">
 		<p class="font-semibold">{name}</p>
-		<p class="font-light text-zinc-300">{issuer}</p>
-		{#if credential_id != null}
-			<p class="hasDate font-medium tracking-normal normal-case">Credential ID: {credential_id}</p>
-		{/if}
-		{#if link != null}
-			<p class="pt-1 text-sm">
+		<p class="flex flex-wrap items-baseline gap-x-4 text-sm text-zinc-400">
+			<span class="text-zinc-300">{issuer}</span>
+			{#if credential_id != null}
+				<span>ID {credential_id}</span>
+			{/if}
+			{#if link != null}
 				<a
 					href={link}
 					target="_blank"
@@ -55,7 +55,7 @@
 				>
 					View credential
 				</a>
-			</p>
-		{/if}
+			{/if}
+		</p>
 	</div>
 </ExpandableCard>

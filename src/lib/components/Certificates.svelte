@@ -10,7 +10,7 @@
 	in:fly={{ y: 12, duration: 700 }}
 >
 	<h5 class="font-medium">Certificates</h5>
-	<div class="flex w-full flex-col space-y-3 px-1 sm:px-4">
+	<div class="grid w-full items-start gap-3 px-1 sm:px-4 md:grid-cols-2 xl:grid-cols-1">
 		{#each certificates as certificate (certificate.name)}
 			<CertificateCard {...certificate} />
 		{/each}

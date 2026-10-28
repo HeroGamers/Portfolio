@@ -11,11 +11,27 @@
 	export let description = null;
 
 	import { formatDate } from '#lib/utils.js';
+	import ArrowUpRight from '~icons/lucide/arrow-up-right';
+
+	// Open off-site links in a new tab
+	const external = /^https?:\/\//.test(link);
 </script>
 
-<div class="mx-1 flex w-full flex-col p-2 xl:mx-0 xl:w-1/2">
-	<a class="card flex flex-col" href={link} target="_blank" title={project_name}>
-		<p class="font-semibold">{project_name}</p>
+<div class="flex">
+	<a
+		class="card group flex w-full flex-col"
+		href={link}
+		target={external ? '_blank' : undefined}
+		rel={external ? 'noreferrer' : undefined}
+		title={project_name}
+	>
+		<p class="flex items-start justify-between gap-3 font-semibold">
+			{project_name}
+			<ArrowUpRight
+				class="icon mt-1 size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+				aria-hidden="true"
+			/>
+		</p>
 		{#if description != null}
 			<p class="pt-2 text-zinc-200">{description}</p>
 		{/if}

@@ -99,11 +99,21 @@ export const certificates = (resume.certificates ?? [])
 		description: certificate.summary ?? null
 	}));
 
+/**
+ * Make links to this site relative, as JSON Resume requires absolute URLs
+ * @param {string} url
+ * @returns {string}
+ */
+const toSiteLink = (url) => {
+	const site = resume.basics?.url;
+	return site && url.startsWith(site + '/') ? url.slice(site.length) : url;
+};
+
 export const projects = (resume.projects ?? []).map((/** @type {any} */ project) => ({
 	date: requireDate(project.startDate, project.name),
 	project_name: project.name,
 	programming_language: project.keywords?.[0] ?? '',
-	link: project.url,
+	link: toSiteLink(project.url),
 	description: project.description ?? null
 }));
 

@@ -16,18 +16,22 @@
 	<About />
 	<div class="flex w-full flex-col gap-7 xl:flex-row xl:items-start xl:justify-between xl:gap-8">
 		<Experience />
-		<Education />
+		<div class="flex w-full flex-col xl:max-w-[48%]">
+			<Education />
+			<Certificates />
+		</div>
 	</div>
-	<Certificates />
 	<Portfolio />
-	<Contact />
-	<Webring />
+	<div class="grid w-full xl:grid-cols-2 xl:gap-x-8">
+		<Contact />
+		<Webring />
+	</div>
 </div>
 
 <style lang="scss">
 	.content-container {
 		margin: 0 auto;
-		max-width: 72rem;
+		max-width: 64rem;
 		padding-bottom: 6rem;
 	}
 </style>

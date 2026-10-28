@@ -14,7 +14,7 @@
 
 basics:
   name: Marcus Sand
-  label: Cybersecurity at TDC Erhverv | CTF Player | OSCP+ OSDA
+  label: SOC Analyst · CTF Player · Cyber Security MSc Student
   pronouns: He/Him
   url: https://herogamers.dev
   location:
@@ -180,6 +180,14 @@ certificates:
       operations.
 
 projects:
+  - name: DDC FastTrack 2026 Writeups
+    startDate: 2026-04
+    url: https://herogamers.dev/blog/topics/ctf/2026/ddc-fasttrack
+    keywords: [CTF]
+    description: >-
+      Writeups for challenges I solved during the DDC FastTrack 2026 CTF, from untangling a suspicious
+      email and its serialized payload to digging through a Windows disk image, presented as
+      interactive slides.
   - name: Portfolio Website
     startDate: 2023-06-03
     url: https://github.com/HeroGamers/Portfolio

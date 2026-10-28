@@ -68,7 +68,7 @@
 		{/each}
 	</div>
 
-	<h6 class="mt-4 font-medium">&gt; Other badges</h6>
+	<h6 class="mt-4 font-medium uppercase">Other badges</h6>
 	<div class="flex w-full flex-wrap gap-3 px-1 sm:px-4">
 		{#each other_badges as badge (badge.href)}
 			<a

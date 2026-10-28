@@ -1,6 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import resume from '#lib/resume.js';
+
+	// Roles from the resume headline, stacked on narrow screens
+	const roles = resume.basics.label.split(' · ');
 
 	const prefix = 'Hello, ';
 	const original = 'Hello, World!';
@@ -42,7 +46,16 @@
 
 <section id="home" class="flex w-full flex-col" in:fly={{ y: 12, duration: 700 }}>
 	<h1 class="typing text-center font-semibold" id="hello-world">{displayText}</h1>
-	<h4 class="text-center font-light text-zinc-300">Currently pursuing an MSc in Cyber Security</h4>
+	<h4
+		class="flex flex-col items-center gap-1 text-center font-light text-zinc-300 lg:flex-row lg:gap-0"
+	>
+		{#each roles as role, index (role)}
+			{#if index > 0}
+				<span class="hidden px-3 text-zinc-500 lg:inline" aria-hidden="true">·</span>
+			{/if}
+			<span>{role}</span>
+		{/each}
+	</h4>
 </section>
 
 <style>

@@ -6,7 +6,7 @@
 
 <section
 	id="experience"
-	class="flex w-full max-w-3xl flex-col items-start xl:max-w-[48%]"
+	class="flex w-full flex-col items-start xl:max-w-[48%]"
 	in:fly={{ y: 12, duration: 700 }}
 >
 	<h5 class="font-medium">Experience</h5>

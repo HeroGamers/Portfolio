@@ -1,5 +1,6 @@
 <script>
 	import ExpandableCard from '#lib/components/ExpandableCard.svelte';
+	import { formatDate, formatDateRange } from '#lib/utils.js';
 
 	/** @type String */
 	export let company = 'Company Name';
@@ -15,83 +16,43 @@
 		}
 	];
 
-	// Get the "newest" end date and the oldest start date for the entire company,
-	// and check if employment types are equal
-	/** @type Date | undefined | null */
-	let oldest_start_date = undefined;
-	/** @type Date | undefined | null */
-	let newest_end_date = undefined;
-	/** @type String | undefined | null */
-	let employmentType = undefined;
+	// The oldest start date and newest end date for the entire company (null if still ongoing)
+	const oldest_start_date = new Date(
+		Math.min(...functions.map((func) => func.start_date.getTime()))
+	);
+	const newest_end_date = functions.some((func) => func.end_date === null)
+		? null
+		: new Date(Math.max(...functions.map((func) => func.end_date?.getTime() ?? 0)));
 
-	functions.forEach((func_at_company) => {
-		if (employmentType === undefined) {
-			employmentType = func_at_company.employment_type;
-		} else if (employmentType !== func_at_company.employment_type) {
-			employmentType = null;
-		}
-
-		if (oldest_start_date === undefined) {
-			oldest_start_date = func_at_company.start_date;
-		} else if (func_at_company.start_date === null && oldest_start_date !== null) {
-			oldest_start_date = null;
-		} else {
-			if (
-				func_at_company.start_date !== null &&
-				oldest_start_date !== null &&
-				func_at_company.start_date.getTime() - oldest_start_date.getTime() < 0
-			) {
-				oldest_start_date = func_at_company.start_date;
-			}
-		}
-
-		if (newest_end_date === undefined) {
-			if (func_at_company.end_date === undefined) {
-				newest_end_date = null;
-			} else {
-				newest_end_date = func_at_company.end_date;
-			}
-		} else if (newest_end_date !== null) {
-			if (func_at_company.end_date === null) {
-				newest_end_date = null;
-			} else if (newest_end_date.getTime() - func_at_company.end_date.getTime() < 0) {
-				newest_end_date = func_at_company.end_date;
-			}
-		}
-	});
-
-	import { durationInHalfYears, formatDate } from '#lib/utils.js';
-
-	const getDateText = () => {
-		const startText = oldest_start_date != null ? formatDate(oldest_start_date) : 'Unknown';
-		const endText = newest_end_date != null ? formatDate(newest_end_date) : 'Present';
-		const durationText =
-			oldest_start_date != null && newest_end_date != null
-				? ' (' + durationInHalfYears(oldest_start_date, newest_end_date) + ' years)'
-				: '';
-
-		return startText + ' to ' + endText + durationText;
-	};
+	// Show the employment type once for the company if all functions share it
+	const employmentTypes = new Set(functions.map((func) => func.employment_type));
+	const sharedEmploymentType = employmentTypes.size === 1 ? functions[0].employment_type : null;
 </script>
 
-<ExpandableCard dateText={getDateText()} {description}>
-	<div slot="summary">
-		<p class="font-semibold">
+<ExpandableCard dateText={formatDateRange(oldest_start_date, newest_end_date)} {description}>
+	<div slot="summary" class="flex flex-col gap-3">
+		<p class="flex flex-wrap items-center gap-x-2 gap-y-1 font-semibold">
 			{company}
-			{#if employmentType !== null}
-				&bull; {employmentType}
+			{#if sharedEmploymentType !== null}
+				<span class="badge">{sharedEmploymentType}</span>
 			{/if}
 		</p>
-		{#each functions as func_at_company, index (index)}
-			<p class="hasDate font-medium tracking-normal normal-case">
-				- {func_at_company.title} ({formatDate(func_at_company.start_date)} to {func_at_company.end_date !=
-				null
-					? formatDate(func_at_company.end_date)
-					: 'Present'})
-			</p>
-			{#if employmentType === null}
-				<p class="pl-2 font-light text-zinc-300">- {func_at_company.employment_type}</p>
-			{/if}
-		{/each}
+		<ul class="flex flex-col gap-2">
+			{#each functions as func_at_company, index (index)}
+				<li class="flex flex-col">
+					<p class="flex flex-wrap items-center gap-x-2 gap-y-1 leading-snug font-medium">
+						{func_at_company.title}
+						{#if sharedEmploymentType === null}
+							<span class="badge">{func_at_company.employment_type}</span>
+						{/if}
+					</p>
+					<p class="text-sm text-zinc-400">
+						{formatDate(func_at_company.start_date)} – {func_at_company.end_date != null
+							? formatDate(func_at_company.end_date)
+							: 'Present'}
+					</p>
+				</li>
+			{/each}
+		</ul>
 	</div>
 </ExpandableCard>

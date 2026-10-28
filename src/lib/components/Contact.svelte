@@ -1,27 +1,27 @@
 <script>
 	import { fly } from 'svelte/transition';
+	import resume from '#lib/resume.js';
+
+	/** @type {Array<{network: string, url: string}>} */
+	const profiles = resume.basics.profiles ?? [];
 </script>
 
-<section id="contact" class="flex w-full flex-col items-center" in:fly={{ y: 12, duration: 700 }}>
-	<div class="contact-container flex w-full max-w-3xl flex-col items-center px-1 sm:px-3">
-		<h5 class="w-full text-center font-medium">Contact</h5>
-		<div class="mt-2 flex w-full flex-col items-center gap-2">
-			<p class="text-center text-sm text-zinc-300">
-				Feel free to reach out through any of these channels:
-			</p>
-			<ul class="flex flex-col items-center gap-2.5">
-				<li class="flex flex-col items-center gap-1 sm:flex-row sm:gap-3">
-					<p class="text-zinc-400">Email:</p>
-					<p id="email" aria-label="Email address" class="font-mono"></p>
-				</li>
-				<li class="flex flex-col items-center gap-1 sm:flex-row sm:gap-3">
-					<p class="text-zinc-400">Keybase:</p>
-					<a href="https://keybase.io/herogamers" target="_blank" class="font-mono"
-						>keybase.io/herogamers</a
+<section id="contact" class="flex w-full flex-col items-start" in:fly={{ y: 12, duration: 700 }}>
+	<h5 class="font-medium">Contact</h5>
+	<div class="flex w-full flex-col gap-3 px-1 sm:px-4">
+		<p class="text-sm text-zinc-300">Feel free to reach out through any of these channels:</p>
+		<dl class="grid grid-cols-[auto_1fr] items-baseline gap-x-5 gap-y-2">
+			<dt class="text-zinc-400">Email</dt>
+			<dd id="email" aria-label="Email address" class="font-mono"></dd>
+			{#each profiles as profile (profile.url)}
+				<dt class="text-zinc-400">{profile.network}</dt>
+				<dd class="min-w-0">
+					<a href={profile.url} target="_blank" rel="noreferrer" class="font-mono break-all"
+						>{profile.url.replace(/^https?:\/\//, '')}</a
 					>
-				</li>
-			</ul>
-		</div>
+				</dd>
+			{/each}
+		</dl>
 	</div>
 </section>
 
