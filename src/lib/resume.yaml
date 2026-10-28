@@ -146,7 +146,7 @@ certificates:
     summary: >-
       An OSCP+ has demonstrated the ability to use persistence, creativity, and perceptiveness to
       identify vulnerabilities and execute organized attacks under tight time constraints.
-      Includes the lifetime OSCP (credential ID 188535160).
+      Includes the lifetime OSCP.
   - name: OffSec Certified Professional (OSCP)
     issuer: OffSec
     date: 2026-07-01
@@ -161,6 +161,7 @@ certificates:
   - name: OffSec Defense Analyst (OSDA)
     issuer: OffSec
     date: 2024-12-19
+    credentialId: '127045920'
     url: https://credentials.offsec.com/ecd21884-5cee-4907-9241-d83389bcfcfa
     summary: >-
       OffSec Defense Analysts (OSDAs) have the skills and expertise needed to detect, uncover, and
@@ -171,6 +172,7 @@ certificates:
     issuer: ISC2
     date: 2024-09-04
     expiryDate: 2027-09-30
+    credentialId: '1715384'
     url: https://www.credly.com/badges/36f66c55-984e-4c06-a1e5-57749f5d0fea
     summary: >-
       Vendor-neutral foundational certification covering core security principles, business
