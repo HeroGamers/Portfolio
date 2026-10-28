@@ -5,6 +5,26 @@
 	/** @type {Array<{name: string, issuer: string, issue_date: Date | null, expiry_date: Date | null, credential_id: string | null, link: string | null, description: string | null}>} */
 	let certificates = [
 		{
+			name: 'OffSec Certified Professional+ (OSCP+)',
+			issuer: 'OffSec',
+			issue_date: new Date('2026-07-01'),
+			expiry_date: new Date('2029-07-01'),
+			credential_id: '188535197',
+			link: 'https://credentials.offsec.com/2ecbb21c-d6e5-4d0d-a5ca-5c6a0d8115b4',
+			description:
+				'An OSCP+ has demonstrated the ability to use persistence, creativity, and perceptiveness to identify vulnerabilities and execute organized attacks under tight time constraints.'
+		},
+		{
+			name: 'OffSec Certified Professional (OSCP)',
+			issuer: 'OffSec',
+			issue_date: new Date('2026-07-01'),
+			expiry_date: null,
+			credential_id: '188535160',
+			link: 'https://credentials.offsec.com/2e6b12bd-0ff9-48f0-b872-2b4f9a266e14',
+			description:
+				'An OSCP has demonstrated the ability to use persistence, creativity, and perceptiveness to identify vulnerabilities and execute organized attacks under tight time constraints.'
+		},
+		{
 			name: 'OffSec Defense Analyst (OSDA)',
 			issuer: 'OffSec',
 			issue_date: new Date('2024-12-19'),

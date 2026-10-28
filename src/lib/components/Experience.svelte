@@ -13,7 +13,9 @@
 				'and developed and refined security tools. My responsibilities also included conducting proactive threat hunting, ' +
 				'integrating threat intelligence into operations, and coordinating effective incident response plans. ' +
 				'Additionally, I engaged with the cybersecurity community by participating in conferences and industry events, ' +
-				'further expanding my knowledge and expertise in the field.',
+				'further expanding my knowledge and expertise in the field. ' +
+				'I have also represented TDC Erhverv as an observer at NATO CCDCOE exercises such as Locked Shields, ' +
+				"the world's largest live-fire cyber defence exercise.",
 			functions: [
 				{
 					start_date: new Date('2024-07-01'),
@@ -33,7 +35,10 @@
 			company: 'Kalmarunionen',
 			description:
 				'Team member of the CTF (Capture The Flag) team, Kalmarunionen. ' +
-				'CTF is a cybersecurity competition that is used to test and develop computer security skills.',
+				'CTF is a cybersecurity competition that is used to test and develop computer security skills. ' +
+				'Kalmarunionen has finished in the global top 3 of competitive hacking three years running (3rd in 2023, 1st in 2024, 2nd in 2025). ' +
+				"We also won Google's Hackceler8 finals in 2025, and placed 3rd in 2026. " +
+				'Since 2025, I have served on the board as accountant.',
 			functions: [
 				{
 					start_date: new Date('2025-07-01'),
@@ -75,7 +80,7 @@
 				},
 				{
 					start_date: new Date('2022-06-01'),
-					end_date: new Date('2023-04-30'),
+					end_date: new Date('2023-05-01'),
 					title: 'Event Coordinator',
 					employment_type: 'Volunteer Work'
 				},
