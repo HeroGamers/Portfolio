@@ -204,6 +204,16 @@ h6 {
 	}
 }
 
+// Iconify icons (~icons/...) draw with `currentColor`
+.icon {
+	color: $icon-fill;
+	transition: color 0.25s ease;
+
+	&:hover {
+		color: $icon-fill-hover;
+	}
+}
+
 main {
 	max-width: 78rem;
 	margin: 0 auto;

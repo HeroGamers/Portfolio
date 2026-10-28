@@ -1,5 +1,5 @@
 <script>
-	import DropDownIcon from '#lib/images/ChevronDownSolidSVG.svelte';
+	import ChevronDown from '~icons/lucide/chevron-down';
 	import { slide } from 'svelte/transition';
 
 	/** @type {string | null} */
@@ -41,11 +41,11 @@
 				<slot name="summary" />
 			</div>
 			<div
-				class="dropdown mt-0.5 ml-3 h-7 w-7 transition-transform duration-300"
+				class="dropdown mt-1 ml-3 size-4.5 shrink-0 transition-transform duration-300"
 				class:rotate-90={!expanded}
 				class:rotate-0={expanded}
 			>
-				<DropDownIcon />
+				<ChevronDown class="icon block size-full" />
 			</div>
 		</div>
 

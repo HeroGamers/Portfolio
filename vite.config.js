@@ -1,6 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import adapter from '@sveltejs/adapter-cloudflare';
+import Icons from 'unplugin-icons/vite';
 import { defineConfig } from 'vitest/config';
 import { parse } from 'yaml';
 
@@ -26,7 +27,9 @@ export default defineConfig({
 				}
 			}),
 			preprocess: vitePreprocess()
-		})
+		}),
+		// Iconify icons as inline SVG components, e.g. `import Icon from '~icons/lucide/chevron-down'`
+		Icons({ compiler: 'svelte', scale: 1 })
 	],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']

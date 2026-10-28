@@ -4,7 +4,7 @@
 	import { resolve } from '$app/paths';
 	import Logo from '#lib/images/SiteIconSVG.svelte';
 	import GitHubLogo from '#lib/images/GitHubSVG.svelte';
-	import LinkedInSVG from '#lib/images/LinkedInSVG.svelte';
+	import LinkedInLogo from '~icons/simple-icons/linkedin';
 
 	/**
 	 * Sections of the page
@@ -216,7 +216,7 @@
 				target="_blank"
 				title="LinkedIn"
 			>
-				<LinkedInSVG />
+				<LinkedInLogo class="icon size-7.5 self-center" />
 			</a>
 		</div>
 	</div>
