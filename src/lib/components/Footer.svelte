@@ -5,7 +5,7 @@
 <footer class="legal-footer mt-8 flex w-full flex-col items-center justify-center text-center">
 	<div class="legal-footer__inner flex flex-row items-end justify-center px-3 py-3">
 		<p class="text-xs tracking-[0.08em] text-zinc-400">
-			Marcus Sand &copy; {year} · CVR 43411764 · Hanstholmvej 55, 2. Th., 2720 Vanløse, Denmark
+			Marcus Sand &copy; {year} · Treeland · CVR 43411764 · Stilledal 42, St. Th., 2720 Vanløse, Denmark
 		</p>
 	</div>
 </footer>
