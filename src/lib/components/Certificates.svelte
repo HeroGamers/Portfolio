@@ -1,5 +1,5 @@
 <script>
-	import CertificateCard from '$lib/components/CertificateCard.svelte';
+	import CertificateCard from '#lib/components/CertificateCard.svelte';
 	import { fly } from 'svelte/transition';
 
 	/** @type {Array<{name: string, issuer: string, issue_date: Date | null, expiry_date: Date | null, credential_id: string | null, link: string | null, description: string | null}>} */

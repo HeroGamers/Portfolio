@@ -2,9 +2,9 @@
 	import { onMount } from 'svelte';
 	import { afterNavigate, goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import Logo from '$lib/images/SiteIconSVG.svelte';
-	import GitHubLogo from '$lib/images/GitHubSVG.svelte';
-	import LinkedInSVG from '$lib/images/LinkedInSVG.svelte';
+	import Logo from '#lib/images/SiteIconSVG.svelte';
+	import GitHubLogo from '#lib/images/GitHubSVG.svelte';
+	import LinkedInSVG from '#lib/images/LinkedInSVG.svelte';
 
 	/**
 	 * Sections of the page

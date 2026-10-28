@@ -10,7 +10,7 @@
 	/** @type String | null */
 	export let description = null;
 
-	import { formatDate } from '$lib/utils.js';
+	import { formatDate } from '#lib/utils.js';
 </script>
 
 <div class="mx-1 flex w-full flex-col p-2 xl:mx-0 xl:w-1/2">

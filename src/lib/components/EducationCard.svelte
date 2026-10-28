@@ -1,5 +1,5 @@
 <script>
-	import ExpandableCard from '$lib/components/ExpandableCard.svelte';
+	import ExpandableCard from '#lib/components/ExpandableCard.svelte';
 
 	/** @type Date */
 	export let start_date = new Date();
@@ -12,7 +12,7 @@
 	/** @type String | null */
 	export let description = null;
 
-	import { durationInHalfYears, formatDate } from '$lib/utils.js';
+	import { durationInHalfYears, formatDate } from '#lib/utils.js';
 
 	const getDateText = () => {
 		const startText = start_date != null ? formatDate(start_date) : 'Unknown';

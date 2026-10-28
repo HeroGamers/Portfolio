@@ -1,5 +1,5 @@
 <script>
-	import BlogHeader from '$lib/components/BlogHeader.svelte';
+	import BlogHeader from '#lib/components/BlogHeader.svelte';
 
 	const description = 'Solutions and writeups from various Capture The Flag competitions.';
 	const page_title = 'Blog - CTFs';

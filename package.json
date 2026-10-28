@@ -17,12 +17,12 @@
 		"@eslint/js": "^10.0.1",
 		"@fontsource/fira-mono": "^5.3.0",
 		"@playwright/test": "^1.64.1",
-		"@sveltejs/adapter-auto": "^7.0.1",
-		"@sveltejs/adapter-cloudflare": "^7.2.9",
-		"@sveltejs/kit": "^2.70.3",
+		"@sveltejs/adapter-auto": "^8.0.0",
+		"@sveltejs/adapter-cloudflare": "^8.0.0",
+		"@sveltejs/kit": "^3.0.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@tailwindcss/postcss": "^4.3.3",
-		"@types/node": "^25.9.9",
+		"@types/node": "^26.6.6",
 		"autoprefixer": "^10.6.2",
 		"eslint": "^10.13.0",
 		"eslint-config-prettier": "^10.1.8",
@@ -48,5 +48,8 @@
 		"@fontsource-variable/open-sans": "^5.3.0",
 		"@fontsource/roboto": "^5.3.0",
 		"reveal.js": "^6.0.2"
+	},
+	"imports": {
+		"#lib/*": "./src/lib/*"
 	}
 }

@@ -1,6 +1,6 @@
 <script>
-	import RevealSlides from '$lib/components/RevealSlides.svelte';
-	import BlogHeader from '$lib/components/BlogHeader.svelte';
+	import RevealSlides from '#lib/components/RevealSlides.svelte';
+	import BlogHeader from '#lib/components/BlogHeader.svelte';
 
 	import youveGotMail2 from './youve-got-mail-2.md?raw';
 	import windowsForensicsHell from './windows-forensics-hell.md?raw';

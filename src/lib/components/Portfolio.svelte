@@ -1,5 +1,5 @@
 <script>
-	import PortfolioCard from '$lib/components/PortfolioCard.svelte';
+	import PortfolioCard from '#lib/components/PortfolioCard.svelte';
 	import { fly } from 'svelte/transition';
 
 	/** @type {Array.<{date: Date, project_name: String, programming_language: String, link: String, description: String}>} */

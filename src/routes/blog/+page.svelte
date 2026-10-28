@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/state';
-	import BlogHeader from '$lib/components/BlogHeader.svelte';
+	import BlogHeader from '#lib/components/BlogHeader.svelte';
 
 	const description =
 		'Writeups, explorations, and infodumps about cybersecurity and CTF competitions.';

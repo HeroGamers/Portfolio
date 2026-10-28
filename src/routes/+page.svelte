@@ -1,12 +1,12 @@
 <script>
-	import Title from '$lib/components/Title.svelte';
-	import About from '$lib/components/About.svelte';
-	import Experience from '$lib/components/Experience.svelte';
-	import Education from '$lib/components/Education.svelte';
-	import Certificates from '$lib/components/Certificates.svelte';
-	import Portfolio from '$lib/components/Portfolio.svelte';
-	import Contact from '$lib/components/Contact.svelte';
-	import Webring from '$lib/components/Webring.svelte';
+	import Title from '#lib/components/Title.svelte';
+	import About from '#lib/components/About.svelte';
+	import Experience from '#lib/components/Experience.svelte';
+	import Education from '#lib/components/Education.svelte';
+	import Certificates from '#lib/components/Certificates.svelte';
+	import Portfolio from '#lib/components/Portfolio.svelte';
+	import Contact from '#lib/components/Contact.svelte';
+	import Webring from '#lib/components/Webring.svelte';
 </script>
 
 <div

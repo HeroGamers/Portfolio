@@ -1,5 +1,5 @@
 <script>
-	import ExpandableCard from '$lib/components/ExpandableCard.svelte';
+	import ExpandableCard from '#lib/components/ExpandableCard.svelte';
 
 	/** @type String */
 	export let company = 'Company Name';
@@ -60,7 +60,7 @@
 		}
 	});
 
-	import { durationInHalfYears, formatDate } from '$lib/utils.js';
+	import { durationInHalfYears, formatDate } from '#lib/utils.js';
 
 	const getDateText = () => {
 		const startText = oldest_start_date != null ? formatDate(oldest_start_date) : 'Unknown';

@@ -1,5 +1,5 @@
 <script>
-	import DropDownIcon from '$lib/images/ChevronDownSolidSVG.svelte';
+	import DropDownIcon from '#lib/images/ChevronDownSolidSVG.svelte';
 	import { slide } from 'svelte/transition';
 
 	/** @type {string | null} */

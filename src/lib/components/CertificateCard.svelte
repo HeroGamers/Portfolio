@@ -1,6 +1,6 @@
 <script>
-	import ExpandableCard from '$lib/components/ExpandableCard.svelte';
-	import { formatDate } from '$lib/utils.js';
+	import ExpandableCard from '#lib/components/ExpandableCard.svelte';
+	import { formatDate } from '#lib/utils.js';
 
 	/** @type {string} */
 	export let name = 'Certification Name';
