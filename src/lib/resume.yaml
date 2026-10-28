@@ -8,6 +8,8 @@
 #   The card description is the `summary` of the first position listed for that company.
 # - `custom.portfolio.employmentType` sets the employment type shown for work positions;
 #   volunteer positions are always shown as "Volunteer Work".
+# - `custom.portfolio.supersededBy` on a certificate hides it while the named certificate
+#   is unexpired (checked at build time).
 # - The email address is deliberately left out, as it is obfuscated on the site.
 
 basics:
@@ -144,6 +146,7 @@ certificates:
     summary: >-
       An OSCP+ has demonstrated the ability to use persistence, creativity, and perceptiveness to
       identify vulnerabilities and execute organized attacks under tight time constraints.
+      Includes the lifetime OSCP (credential ID 188535160).
   - name: OffSec Certified Professional (OSCP)
     issuer: OffSec
     date: 2026-07-01
@@ -152,6 +155,9 @@ certificates:
     summary: >-
       An OSCP has demonstrated the ability to use persistence, creativity, and perceptiveness to
       identify vulnerabilities and execute organized attacks under tight time constraints.
+    custom:
+      portfolio:
+        supersededBy: OffSec Certified Professional+ (OSCP+)
   - name: OffSec Defense Analyst (OSDA)
     issuer: OffSec
     date: 2024-12-19

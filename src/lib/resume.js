@@ -67,15 +67,37 @@ export const educations = (resume.education ?? []).map((/** @type {any} */ educa
 	description: education.summary ?? null
 }));
 
-export const certificates = (resume.certificates ?? []).map((/** @type {any} */ certificate) => ({
-	name: certificate.name,
-	issuer: certificate.issuer,
-	issue_date: toDate(certificate.date),
-	expiry_date: toDate(certificate.expiryDate),
-	credential_id: certificate.credentialId ?? null,
-	link: certificate.url ?? null,
-	description: certificate.summary ?? null
-}));
+/**
+ * Whether a certificate is hidden because the certificate superseding it is still valid
+ * @param {any} certificate
+ * @returns {boolean}
+ */
+const isSuperseded = (certificate) => {
+	const supersededBy = certificate.custom?.portfolio?.supersededBy;
+	if (!supersededBy) return false;
+
+	const successor = (resume.certificates ?? []).find(
+		(/** @type {any} */ other) => other.name === supersededBy
+	);
+	if (!successor) {
+		throw new Error(`resume.yaml: ${certificate.name} is superseded by unknown ${supersededBy}`);
+	}
+
+	const expiry = toDate(successor.expiryDate);
+	return expiry == null || expiry.getTime() > Date.now();
+};
+
+export const certificates = (resume.certificates ?? [])
+	.filter((/** @type {any} */ certificate) => !isSuperseded(certificate))
+	.map((/** @type {any} */ certificate) => ({
+		name: certificate.name,
+		issuer: certificate.issuer,
+		issue_date: toDate(certificate.date),
+		expiry_date: toDate(certificate.expiryDate),
+		credential_id: certificate.credentialId ?? null,
+		link: certificate.url ?? null,
+		description: certificate.summary ?? null
+	}));
 
 export const projects = (resume.projects ?? []).map((/** @type {any} */ project) => ({
 	date: requireDate(project.startDate, project.name),
