@@ -11,8 +11,8 @@
 	<div class="flex flex-col items-start px-1 sm:px-4">
 		<p>
 			I'm Marcus, though most people know me as Hero. I'm a {age}-year-old SOC analyst at TDC
-			Erhverv in Copenhagen, working on incident response, threat hunting and detection engineering,
-			while finishing an
+			Erhverv in Copenhagen, working on detection engineering, incident response and security
+			automation, while finishing an
 			<a
 				href="https://www.en.aau.dk/education/master/cyber-security"
 				target="_blank"
@@ -32,6 +32,13 @@
 			the Flag (CTF) competitions with
 			<a href="https://kalmarunionen.dk" target="_blank" rel="noreferrer">Kalmarunionen</a>, a team
 			long known for competing at the very top, where I also sit on the board.
+		</p>
+		<p class="pt-2">
+			Lately, much of my thinking goes to AI in security work. Attackers are already weaponising
+			LLMs, so defenders have to keep up, but without losing our grip: keeping a human in the loop,
+			handling sensitive data where sending it to the strongest proprietary model isn't an option,
+			and making sure someone still understands, and can take responsibility for, the decisions
+			being made.
 		</p>
 	</div>
 </section>

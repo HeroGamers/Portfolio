@@ -37,13 +37,24 @@ work:
   - name: TDC Erhverv
     position: Security Operations Center Analyst
     startDate: 2024-07-01
-    summary: SOC analyst in TDC Erhverv's Security Operations Center, part of the TDC Group.
+    summary: >-
+      SOC analyst in the Security Operations Center at TDC Erhverv, part of TDC Brands, Denmark's
+      largest ISP, where we deliver managed security services (MSSP) to customers.
     highlights:
-      - Investigate and respond to security incidents, including forensic analysis
-      - Build use cases and detection rules for SIEM-based managed detection and response (MDR)
-      - Automate response workflows with SOAR and develop internal security tools
-      - Hunt threats proactively and bring threat intelligence into daily operations
-      - Co-manage anti-DDoS protection
+      - >-
+        Engineer detections as code, from use cases to deployed rules for SIEM-based managed
+        detection and response (MDR)
+      - Respond to security incidents, including forensic analysis
+      - >-
+        Build and maintain security automation, tooling and infrastructure, from SDKs, SOAR
+        workflows and scripts to full-stack applications
+      - Triage, handle and escalate alerts as part of daily analyst work
+      - Help operate the managed DDoS protection service
+      - Hunt threats and bring threat intelligence into operations
+      - >-
+        Explore how AI and LLMs can support security work responsibly, keeping a human in the
+        loop where data sensitivity and accountability rule out simply using the strongest
+        proprietary model
       - Observed NATO CCDCOE exercises such as Locked Shields on behalf of TDC Erhverv
     custom:
       portfolio:
