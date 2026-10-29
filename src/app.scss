@@ -160,6 +160,8 @@ h6 {
 	box-shadow: var(--shadow-soft);
 	backdrop-filter: blur(8px);
 	position: relative;
+	// Own stacking context, so the hover glow can sit behind the card's content
+	isolation: isolate;
 	transition:
 		transform 0.25s ease,
 		border-color 0.25s ease,
@@ -179,6 +181,7 @@ h6 {
 		opacity: 0;
 		transition: opacity 0.6s ease;
 		pointer-events: none;
+		z-index: -1;
 	}
 
 	&:hover {
