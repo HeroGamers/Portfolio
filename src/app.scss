@@ -163,7 +163,6 @@ h6 {
 	// Own stacking context, so the hover glow can sit behind the card's content
 	isolation: isolate;
 	transition:
-		transform 0.25s ease,
 		border-color 0.25s ease,
 		background-color 0.25s ease,
 		box-shadow 0.25s ease;
@@ -187,7 +186,6 @@ h6 {
 	&:hover {
 		background-color: var(--surface-1);
 		border-color: var(--line-strong);
-		transform: translateY(-2px);
 		box-shadow: 0 16px 42px rgba(111, 60, 151, 0.15);
 		cursor: pointer;
 		text-decoration: none;
@@ -225,21 +223,6 @@ main {
 section {
 	position: relative;
 	padding-top: 2.8rem;
-
-	&::before {
-		content: '';
-		position: absolute;
-		left: -0.8rem;
-		top: 3.8rem;
-		height: calc(100% - 3.8rem);
-		width: 2px;
-		background: linear-gradient(
-			180deg,
-			rgba(111, 60, 151, 0.58) 0%,
-			rgba(111, 60, 151, 0.2) 45%,
-			rgba(111, 60, 151, 0) 100%
-		);
-	}
 }
 
 #home {
@@ -250,10 +233,6 @@ section {
 	justify-items: center;
 	text-align: center;
 	gap: 1rem;
-
-	&::before {
-		display: none;
-	}
 }
 
 .hasDate {
@@ -280,21 +259,6 @@ section {
 @media (max-width: 767px) {
 	section {
 		padding-top: 2.5rem;
-
-		&::before {
-			left: -1.4rem;
-			top: 3.2rem;
-			height: calc(100% - 3.2rem);
-		}
-	}
-}
-
-/* Blog-specific styles */
-#ddc-fasttrack,
-#ctf-blog,
-#blog {
-	&::before {
-		display: none;
 	}
 }
 
@@ -311,4 +275,14 @@ section {
 :global(.reveal code) {
 	padding: 2px 5px;
 	border-radius: 3px;
+}
+
+// Respect visitors who prefer reduced motion
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }

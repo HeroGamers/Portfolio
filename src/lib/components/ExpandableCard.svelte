@@ -1,6 +1,7 @@
 <script>
 	import ChevronDown from '~icons/lucide/chevron-down';
 	import { slide } from 'svelte/transition';
+	import { prefersReducedMotion } from 'svelte/motion';
 
 	/** @type {string | null} */
 	export let dateText = null;
@@ -56,7 +57,7 @@
 		{#if (description != null || highlights.length > 0) && expanded}
 			<div
 				class="card-expansion flex flex-col gap-2 pt-2"
-				transition:slide|local={{ duration: transitionDuration }}
+				transition:slide|local={{ duration: prefersReducedMotion.current ? 0 : transitionDuration }}
 			>
 				{#if description != null}
 					<p>{description}</p>

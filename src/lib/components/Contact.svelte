@@ -1,12 +1,11 @@
 <script>
-	import { fly } from 'svelte/transition';
 	import resume from '#lib/resume.js';
 
 	/** @type {Array<{network: string, url: string}>} */
 	const profiles = resume.basics.profiles ?? [];
 </script>
 
-<section id="contact" class="flex w-full flex-col items-start" in:fly={{ y: 12, duration: 700 }}>
+<section id="contact" class="flex w-full flex-col items-start">
 	<h5 class="font-medium">Contact</h5>
 	<div class="flex w-full flex-col gap-3 px-1 sm:px-4">
 		<p class="text-sm text-zinc-300">Feel free to reach out through any of these channels:</p>

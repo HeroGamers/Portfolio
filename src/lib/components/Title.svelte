@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
+	import { prefersReducedMotion } from 'svelte/motion';
 	import resume from '#lib/resume.js';
 
 	// Roles from the resume headline, stacked on narrow screens
@@ -14,6 +14,12 @@
 
 	onMount(() => {
 		if (typeof window === 'undefined') return;
+
+		// Skip the typing effect for visitors who prefer reduced motion
+		if (prefersReducedMotion.current) {
+			displayText = prefix + replacement;
+			return;
+		}
 
 		/** @type {ReturnType<typeof setTimeout>[]} */
 		const timers = [];
@@ -44,7 +50,7 @@
 	});
 </script>
 
-<section id="home" class="flex w-full flex-col" in:fly={{ y: 12, duration: 700 }}>
+<section id="home" class="flex w-full flex-col">
 	<h1 class="typing text-center font-semibold" id="hello-world">{displayText}</h1>
 	<h4
 		class="flex flex-col items-center gap-1 text-center font-light text-zinc-300 lg:flex-row lg:gap-0"
@@ -74,6 +80,12 @@
 		content: '|';
 		margin-left: 0.08em;
 		animation: blink 0.9s step-end infinite;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.typing::after {
+			animation: none;
+		}
 	}
 
 	@keyframes blink {
