@@ -17,7 +17,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [22.x, 24.x]
+        # 26.x matches .node-version (used by Cloudflare Pages), 24.x is the previous LTS
+        node-version: [24.x, 26.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
         # even-numbered version are LTS, odd-numbered versions are Current
 
