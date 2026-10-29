@@ -10,27 +10,28 @@
 	<h5 class="font-medium">About me</h5>
 	<div class="flex flex-col items-start px-1 sm:px-4">
 		<p>
-			My name is Marcus (although I usually go by Hero), and I'm a {age}-year-old Cybersecurity
-			professional living in Copenhagen, Denmark. I'm also currently pursuing an
-			<a href="https://www.en.aau.dk/education/master/cyber-security" rel="_blank"
-				>MSc in Cyber Security</a
+			I'm Marcus, though most people know me as Hero. I'm a {age}-year-old SOC analyst at TDC
+			Erhverv in Copenhagen, working on incident response, threat hunting and detection engineering,
+			while finishing an
+			<a
+				href="https://www.en.aau.dk/education/master/cyber-security"
+				target="_blank"
+				rel="noreferrer">MSc in Cyber Security</a
 			>
-			to deepen my expertise and expand my career in this dynamic field.
+			at Aalborg University.
 		</p>
 		<p class="pt-2">
-			My journey into tech began with a fascination for computers and video games, which evolved
-			into a passion for understanding how systems are built and secured. I started by creating
-			websites and Minecraft plugins, which later grew into developing full-stack applications and
-			experimenting with AI models using TensorFlow and PyTorch. This natural curiosity eventually
-			led me to focus on cybersecurity, where I thrive on solving complex challenges and protecting
-			systems from threats.
+			I got into tech through computers and video games, building websites and Minecraft plugins
+			before moving on to full-stack applications and, well before LLMs took off, training my own
+			machine learning models with TensorFlow. Wanting to understand how systems break eventually
+			pulled me toward security.
 		</p>
 		<p class="pt-2">
-			I've worked on a variety of projects, from enhancing security tools and workflows in
-			professional settings to participating in Capture the Flag (CTF) competitions with
-			Kalmarunionen, in order to sharpen my practical skills and problem-solving abilities. This
-			website serves as a portfolio showcasing my journey and accomplishments in technology and
-			cybersecurity.
+			I believe you defend systems best when you understand how they're attacked, which is why I
+			took the OSCP+ alongside my defensive work. Most of my offensive practice happens in Capture
+			the Flag (CTF) competitions with
+			<a href="https://kalmarunionen.dk" target="_blank" rel="noreferrer">Kalmarunionen</a>, a team
+			long known for competing at the very top, where I also sit on the board.
 		</p>
 	</div>
 </section>
