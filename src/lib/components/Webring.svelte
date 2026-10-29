@@ -14,7 +14,7 @@
 		{
 			name: 'enscribe',
 			href: 'https://enscribe.dev',
-			image: '/badges/enscribe.png'
+			image: '/badges/enscribe.gif'
 		}
 	];
 
