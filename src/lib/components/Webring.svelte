@@ -15,6 +15,26 @@
 			name: 'enscribe',
 			href: 'https://enscribe.dev',
 			image: '/badges/enscribe.gif'
+		},
+		{
+			name: 'Polly',
+			href: 'https://blog.polly.computer',
+			image: '/badges/polly.png'
+		},
+		{
+			name: 'Lyra',
+			href: 'https://lyra.horse',
+			image: '/badges/lyra.png'
+		},
+		{
+			name: 'es3n1n',
+			href: 'https://es3n1n.io',
+			image: '/badges/es3n1n.png'
+		},
+		{
+			name: 'Niko',
+			href: 'https://rab.lol',
+			image: '/badges/niko.gif'
 		}
 	];
 
@@ -44,6 +64,11 @@
 			name: 'Matrix',
 			href: 'https://matrix.org/',
 			image: '/badges/other/matrix.png'
+		},
+		{
+			name: 'owo',
+			href: 'https://whats-th.is/',
+			image: '/badges/other/owo.gif'
 		}
 	];
 </script>
