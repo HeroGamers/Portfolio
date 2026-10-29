@@ -10,6 +10,11 @@
 			name: 'Ivy (hexadecimalDinosaur)',
 			href: 'https://hexadecimaldinosaur.com',
 			image: '/badges/hexadecimaldinosaur.gif'
+		},
+		{
+			name: 'enscribe',
+			href: 'https://enscribe.dev',
+			image: '/badges/enscribe.png'
 		}
 	];
 
