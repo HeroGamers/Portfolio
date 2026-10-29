@@ -6,6 +6,10 @@
 	export let dateText = null;
 	/** @type {string | null} */
 	export let description = null;
+	/** @type {string[]} bullet points shown under the description */
+	export let highlights = [];
+	/** @type {string | null} optional heading above the highlights */
+	export let highlightsLabel = null;
 	/** @type {number} */
 	export let transitionDuration = 220;
 
@@ -49,10 +53,25 @@
 			</div>
 		</div>
 
-		{#if description != null && expanded}
-			<p class="card-expansion pt-2" transition:slide|local={{ duration: transitionDuration }}>
-				{description}
-			</p>
+		{#if (description != null || highlights.length > 0) && expanded}
+			<div
+				class="card-expansion flex flex-col gap-2 pt-2"
+				transition:slide|local={{ duration: transitionDuration }}
+			>
+				{#if description != null}
+					<p>{description}</p>
+				{/if}
+				{#if highlights.length > 0}
+					{#if highlightsLabel != null}
+						<p class="text-sm text-zinc-400">{highlightsLabel}</p>
+					{/if}
+					<ul class="flex list-disc flex-col gap-1 pl-5 marker:text-zinc-500">
+						{#each highlights as highlight (highlight)}
+							<li>{highlight}</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
 		{/if}
 	</div>
 </div>

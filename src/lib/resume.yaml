@@ -5,7 +5,8 @@
 #
 # Portfolio-specific conventions:
 # - Positions at the same company/organization are grouped into one card, in file order.
-#   The card description is the `summary` of the first position listed for that company.
+#   The card description and bullets are the `summary` and `highlights` of the first position
+#   listed for that company.
 # - `custom.portfolio.employmentType` sets the employment type shown for work positions;
 #   volunteer positions are always shown as "Volunteer Work".
 # - `custom.portfolio.supersededBy` on a certificate hides it while the named certificate
@@ -36,18 +37,14 @@ work:
   - name: TDC Erhverv
     position: Security Operations Center Analyst
     startDate: 2024-07-01
-    summary: >-
-      At TDC Erhverv, a company under the TDC Group (telecommunications), I gained extensive
-      experience in cybersecurity operations through my role as a SOC Analyst. I analyzed complex
-      security incidents, supported Managed Detection and Response (MDR) using different SIEM
-      platforms, and developed use cases and detection rules to enhance monitoring capabilities. I
-      optimized workflows by improving SOAR automation, co-managed anti-DDoS solutions, and
-      developed and refined security tools. My responsibilities also included conducting proactive
-      threat hunting, integrating threat intelligence into operations, and coordinating effective
-      incident response plans. Additionally, I engaged with the cybersecurity community by
-      participating in conferences and industry events, further expanding my knowledge and
-      expertise in the field. I have also represented TDC Erhverv as an observer at NATO CCDCOE
-      exercises such as Locked Shields, the world's largest live-fire cyber defence exercise.
+    summary: SOC analyst in TDC Erhverv's Security Operations Center, part of the TDC Group.
+    highlights:
+      - Investigate and respond to security incidents, including forensic analysis
+      - Build use cases and detection rules for SIEM-based managed detection and response (MDR)
+      - Automate response workflows with SOAR and develop internal security tools
+      - Hunt threats proactively and bring threat intelligence into daily operations
+      - Co-manage anti-DDoS protection
+      - Observed NATO CCDCOE exercises such as Locked Shields on behalf of TDC Erhverv
     custom:
       portfolio:
         employmentType: Full-time
@@ -63,12 +60,11 @@ volunteer:
   - organization: Kalmarunionen
     position: Board Member - Accountant
     startDate: 2025-07-01
-    summary: >-
-      Team member of the CTF (Capture The Flag) team, Kalmarunionen. CTF is a cybersecurity
-      competition that is used to test and develop computer security skills. Kalmarunionen has
-      finished in the global top 3 of competitive hacking three years running (3rd in 2023, 1st in
-      2024, 2nd in 2025). We also won Google's Hackceler8 finals in 2025, and placed 3rd in 2026.
-      Since 2025, I have served on the board as accountant.
+    summary: Danish competitive CTF (Capture The Flag) team.
+    highlights:
+      - 'Global top 3 three years running: 3rd in 2023, 1st in 2024, 2nd in 2025'
+      - Won Google's Hackceler8 finals in 2025, placed 3rd in 2026
+      - Board member and accountant since 2025
   - organization: Kalmarunionen
     position: CTF Player
     startDate: 2024-03-01
@@ -77,16 +73,13 @@ volunteer:
     position: IT Coordinator
     startDate: 2023-04-01
     endDate: 2025-02-01
-    summary: >-
-      Previous member of the non-profit non-political organization DSE, whose purpose is to help
-      students connect with companies. As a system administrator and developer, I was responsible
-      for maintaining and developing both new and existing systems in DSE, which has given me the
-      ability to understand, enhance, and refactor code created by previous members. As an event
-      coordinator, I was part of a team of six people where we coordinated the DSE Messe Lyngby
-      2023, the largest job and career fair for engineering students in Denmark. This provided me
-      with experiences in various areas such as logistics, design, and teamwork. I have also worked
-      as a sales representative, selling DSE's products through telephone, email, and in-person
-      interactions, which has given me experience in sales and communication with customers.
+    summary: Student-run, non-profit organisation connecting engineering students with companies.
+    highlights:
+      - >-
+        Coordinated the IT team: maintained physical and virtual servers, Active Directory and
+        Group Policy, and developed the organisation's websites and applications
+      - Co-organised DSE Messe Lyngby 2023, a job fair with more than 130 companies, in a team of six
+      - Sold DSE's products to companies and administered its LinkedIn page
   - organization: "DSE - Students' Business Relations"
     position: Salesperson
     startDate: 2022-04-01
@@ -106,35 +99,52 @@ education:
     area: Cyber Security
     startDate: 2025-09-01
     summary: >-
-      I have specialized myself in the field of cyber security, and have gained a deeper
-      understanding of the various aspects of cyber security, including network security,
-      cryptography, and cyber security management. I have also gained practical experience in the
-      field through various semester projects, which have given me a strong foundation in the field
-      of cyber security.
+      Engineering master's covering both offensive and defensive security, from cryptography and
+      network security to software security and identity management. Built around Aalborg
+      University's problem-based learning model, with each semester centred on a group project
+      that puts the theory into practice, leading up to a master's thesis.
+    courses:
+      - Fundamentals of Security and Cryptography
+      - Network Security
+      - Software Security
+      - Identity and Access Management
+      - Security in IoT and Cloud Architectures
+      - Hacker Space
+      - Dilemmas in Cyber Security
+      - Advanced Topics in Cyber Security
   - institution: DTU - Technical University of Denmark
     studyType: Bachelor of Engineering - BEng
     area: Software Technology
     startDate: 2021-08-01
     endDate: 2025-02-05
     summary: >-
-      I have developed a strong ability to analyze problems, design solutions, and implement them
-      in practice. My education in software technology has given me a deep understanding in a wide
-      range of topics such as software processes, principles of data communication, and network
-      security. I have also gained practical experience with agile development methods like SCRUM
-      and project management tools, which have provided me with an efficient approach to project
-      management and organization, ensuring the development of high-quality solutions.
+      Software engineering degree covering software processes, data communication and network
+      security, with agile (Scrum) team projects.
+    courses:
+      - Advanced Programming
+      - Backend Development, Operations and Distributed Systems
+      - Development Methods for IT Systems
+      - Linux Server and Network
+      - User Experience and Mobile Application Development
+      - Version Control and Test Methods
+    custom:
+      portfolio:
+        diplomaUrl: https://app.diplomasafe.com/en-US/diploma/d0fcf2e3c656cc4f7ddf681d0d83950e899bb857b
   - institution: HKUST - The Hong Kong University of Science and Technology
     studyType: Bachelor of Engineering - BEng
     area: Software Technology
     startDate: 2023-08-01
     endDate: 2024-01-01
     summary: >-
-      Exchange Studies as a part of my bachelor's at the Technical University of Denmark. I got to
-      take several courses in Cyber Security, and gain experience in a different culture, and to
-      learn about the differences in the educational system between Denmark and Hong Kong. I have
-      also gained experience in working with people from different cultures and backgrounds, which
-      has given me a broader perspective on the world and how to work with people from different
-      backgrounds.
+      Exchange semester as part of my DTU bachelor's, focused on cyber security courses. Dean's
+      List, Fall 2023.
+    courses:
+      - Principles of Cybersecurity
+      - Computer and Communication Security
+      - Competitive Programming in Cybersecurity I
+      - Exploring Artificial Intelligence
+      - Internet Computing
+      - IoT and Smart Sensing
 
 certificates:
   - name: OffSec Certified Professional+ (OSCP+)
@@ -193,16 +203,15 @@ projects:
     url: https://github.com/HeroGamers/Portfolio
     keywords: [Svelte]
     description: >-
-      This website, which is written in Svelte and replaces my old static portfolio website.
-      Imagine having developed full-stack web applications and still having a static portfolio
-      website. Not me, anymore!
+      This site: SvelteKit on Cloudflare Pages, with content driven by a JSON Resume YAML file and
+      a blog of interactive reveal.js writeups.
   - name: HeroAI
     startDate: 2020-08-31
     url: https://github.com/HeroGamers/HeroAI
     keywords: [Python]
     description: >-
-      An AI written using TensorFlow Keras performing text classification using sentiment analysis
-      on text messages, to determine whether messages were toxic.
+      Toxicity classifier for chat moderation, built with TensorFlow Keras (98.5% precision) and
+      served through a Flask API.
   - name: MyDog
     startDate: 2019-08-10
     url: https://github.com/HeroGamers/MyDog

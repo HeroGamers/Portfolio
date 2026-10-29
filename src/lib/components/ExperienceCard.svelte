@@ -6,6 +6,8 @@
 	export let company = 'Company Name';
 	/** @type String | null */
 	export let description = null;
+	/** @type {string[]} */
+	export let highlights = [];
 	/** @type Array<{start_date: Date, end_date: Date | null, title: String, employment_type: String}> */
 	export let functions = [
 		{
@@ -29,7 +31,11 @@
 	const sharedEmploymentType = employmentTypes.size === 1 ? functions[0].employment_type : null;
 </script>
 
-<ExpandableCard dateText={formatDateRange(oldest_start_date, newest_end_date)} {description}>
+<ExpandableCard
+	dateText={formatDateRange(oldest_start_date, newest_end_date)}
+	{description}
+	{highlights}
+>
 	<div slot="summary" class="flex flex-col gap-3">
 		<p class="flex flex-wrap items-center gap-x-2 gap-y-1 font-semibold">
 			{company}

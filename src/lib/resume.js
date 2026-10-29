@@ -20,16 +20,21 @@ const requireDate = (date, entry) => {
 
 /**
  * Group positions by company/organization, keeping file order.
- * The first position listed for a company provides the card description.
- * @param {Array<{company: string, summary?: string, start_date: Date, end_date: Date | null, title: string, employment_type: string}>} positions
+ * The first position listed for a company provides the card description and highlights.
+ * @param {Array<{company: string, summary?: string, highlights?: string[], start_date: Date, end_date: Date | null, title: string, employment_type: string}>} positions
  */
 const groupByCompany = (positions) => {
-	/** @type {Map<string, {company: string, description: string | null, functions: Array<{start_date: Date, end_date: Date | null, title: string, employment_type: string}>}>} */
+	/** @type {Map<string, {company: string, description: string | null, highlights: string[], functions: Array<{start_date: Date, end_date: Date | null, title: string, employment_type: string}>}>} */
 	const companies = new Map();
 
-	for (const { company, summary, ...func } of positions) {
+	for (const { company, summary, highlights, ...func } of positions) {
 		if (!companies.has(company)) {
-			companies.set(company, { company, description: summary ?? null, functions: [] });
+			companies.set(company, {
+				company,
+				description: summary ?? null,
+				highlights: highlights ?? [],
+				functions: []
+			});
 		}
 		companies.get(company)?.functions.push(func);
 	}
@@ -41,6 +46,7 @@ export const experiences = groupByCompany([
 	...(resume.work ?? []).map((/** @type {any} */ work) => ({
 		company: work.name,
 		summary: work.summary,
+		highlights: work.highlights,
 		start_date: requireDate(work.startDate, `${work.name} - ${work.position}`),
 		end_date: toDate(work.endDate),
 		title: work.position,
@@ -49,6 +55,7 @@ export const experiences = groupByCompany([
 	...(resume.volunteer ?? []).map((/** @type {any} */ volunteer) => ({
 		company: volunteer.organization,
 		summary: volunteer.summary,
+		highlights: volunteer.highlights,
 		start_date: requireDate(
 			volunteer.startDate,
 			`${volunteer.organization} - ${volunteer.position}`
@@ -64,7 +71,9 @@ export const educations = (resume.education ?? []).map((/** @type {any} */ educa
 	end_date: toDate(education.endDate),
 	school: education.institution,
 	degree: [education.studyType, education.area].filter(Boolean).join(': '),
-	description: education.summary ?? null
+	description: education.summary ?? null,
+	courses: education.courses ?? [],
+	link: education.custom?.portfolio?.diplomaUrl ?? null
 }));
 
 /**
