@@ -15,7 +15,7 @@
 
 basics:
   name: Marcus Sand
-  label: SOC Analyst · CTF Player · Cyber Security MSc Student
+  label: Lead SOC Analyst · CTF Player · Cyber Security MSc Student
   pronouns: He/Him
   url: https://herogamers.dev
   location:
@@ -35,16 +35,19 @@ basics:
 
 work:
   - name: TDC Erhverv
-    position: Security Operations Center Analyst
-    startDate: 2024-07-01
+    position: Lead SOC Security Analyst
+    startDate: 2026-11-01
     summary: >-
-      SOC analyst in the Security Operations Center at TDC Erhverv, part of TDC Brands, Denmark's
-      largest ISP, where we deliver managed security services (MSSP) to customers.
+      Lead SOC analyst (Lead Specialist, Cyber Security) in the Security Operations Center at TDC
+      Erhverv, part of TDC Brands, Denmark's largest ISP, where we deliver managed security
+      services (MSSP) to customers.
     highlights:
       - >-
-        Engineer detections as code, from use cases to deployed rules for SIEM-based managed
-        detection and response (MDR)
-      - Respond to security incidents, including forensic analysis
+        Drive detection engineering in the SOC, from use cases to detections as code deployed
+        for SIEM-based managed detection and response (MDR)
+      - >-
+        Respond to security incidents, including forensic analysis, and coordinate full
+        incident response when needed
       - >-
         Build and maintain security automation, tooling and infrastructure, from SDKs, SOAR
         workflows and scripts to full-stack applications
@@ -55,7 +58,14 @@ work:
         Explore how AI and LLMs can support security work responsibly, keeping a human in the
         loop where data sensitivity and accountability rule out simply using the strongest
         proprietary model
-      - Observed NATO CCDCOE exercises such as Locked Shields on behalf of TDC Erhverv
+      - Attend security conferences and industry events to stay current with the field
+    custom:
+      portfolio:
+        employmentType: Full-time
+  - name: TDC Erhverv
+    position: Security Operations Center Analyst
+    startDate: 2024-07-01
+    endDate: 2026-11-01
     custom:
       portfolio:
         employmentType: Full-time

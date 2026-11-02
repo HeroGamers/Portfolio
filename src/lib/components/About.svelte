@@ -9,7 +9,7 @@
 	<h5 class="font-medium">About me</h5>
 	<div class="flex flex-col items-start px-1 sm:px-4">
 		<p>
-			I'm Marcus, though most people know me as Hero. I'm a {age}-year-old SOC analyst at TDC
+			I'm Marcus, though most people know me as Hero. I'm a {age}-year-old lead SOC analyst at TDC
 			Erhverv in Copenhagen, working on detection engineering, incident response and security
 			automation, while finishing an
 			<a
