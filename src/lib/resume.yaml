@@ -15,7 +15,7 @@
 
 basics:
   name: Marcus Sand
-  label: Lead SOC Analyst · CTF Player · Cyber Security MSc Student
+  label: Lead SOC Security Analyst · CTF Player · Cyber Security MSc Student
   pronouns: He/Him
   url: https://herogamers.dev
   location:
@@ -38,9 +38,9 @@ work:
     position: Lead SOC Security Analyst
     startDate: 2026-11-01
     summary: >-
-      Lead SOC analyst (Lead Specialist, Cyber Security) in the Security Operations Center at TDC
-      Erhverv, part of TDC Brands, Denmark's largest ISP, where we deliver managed security
-      services (MSSP) to customers.
+      Lead SOC Security Analyst (Lead Specialist, Cyber Security) in the Security Operations
+      Center at TDC Erhverv, part of TDC Brands, Denmark's largest ISP, where we deliver managed
+      security services (MSSP) to customers.
     highlights:
       - >-
         Drive detection engineering in the SOC, from use cases to detections as code deployed
